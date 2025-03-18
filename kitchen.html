@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/logo/favicon.ico">
+
+    <!-- <script src="https://kit.fontawesome.com/5950d23ec9.js" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>KAAS Kitchens</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
+            <nav class="header_middle">
+                <ul class="mainNav">
+                    <li><a href="closet.html"  class="nav-item"><img src="./img/logo/cabinet.png" alt="cabinet.png" class="navImg"><br>Шкафы</a>
+                    </li>
+                    <li><a href="kitchen.html"  class="nav-item"><img src="./img/logo/kitchen.png" alt="kitchen.png"
+                                class="navImg"><br>Кухни</a></li>
+                    <li><a href="showrooms.html" class="nav-item"><img src="./img/logo/location.png" alt="location.png"
+                                class="navImg" ><br>Шоурумы</a></li>
+                    <!-- перетащить шоурумы и контакты в один раздел, добавить раздел "О Нас" -->
+                    <li><a href="about.html" class="nav-item"><img src="./img/logo/about.svg" alt="about.svg" class="navImg"><br>О&#160;нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__right">
+                <div class="header__contact">
+                    <a href="tel:+77058323200" class="header__phone">+7&#160;(705-83)&#160;2-32-00</a>
+                    <span class="header__subtitle">Бесплатная консультация</span>
+                </div>
+                <a data-fancybox data-src="#dialog-content" class="header__button">ЗАКАЗАТЬ ЗВОНОК</a>
+            </div>
+            <!-- Улучшенная кнопка бургер-меню -->
+            <button class="header__burger" id="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Закрыть меню">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+    <main class="mainCloset">
+        <!-- <section class="container">
+            <div class="topic">
+                <h2>Кухни</h2>
+            </div>
+        </section>
+        <section class="container">
+            <ul class="productsWrap">
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/1.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/1 полка/8.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/1 ящик/1 ящик.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/2 полки/7.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>шла саша по шоссе</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/2 ящика/2 ящика.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/2.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/3 ящика/3.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/4 полки 1 ящик/9.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+                <li class="product">
+                    <a href="https://kaspi.kz/shop/p/deerma-dx700-belyi-3701383/?c=750000000" rel="group1" data-fancybox="gallery" target="_blank">
+                        <h2 class="productName">Шкаф</h2>
+                    <div class="productImg">
+                        <img src="./img/800/5 полок/5 полок.png" alt="">
+                    </div>
+                    <div class="productDescription">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque suscipit minus modi, neque earum velit iusto tempore adipisci tempora ducimus similique quis architecto, laborum saepe nesciunt voluptatibus nemo iure voluptas?</p>
+                    </div>
+                </a>
+                </li>
+            </ul>
+        </section> -->
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- <a href="index.html"><img src="./img/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a> -->
+                <nav class="header_middle">
+                    <ul class="mainNav">
+                        <li><a href="https://wa.me/" class="footerNavLink"><img src="./img/logo/whatsapp.svg"
+                                    alt="whatsapp.svg" class="footNavImg"><br>WhatsApp<br></a>
+                        </li>
+                        <li><a href="https://www.instagram.com/kaaskz/"
+                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                    class="footNavImg"><br>KAAS<br>Мебель на&#160;заказ</a></li>
+                        <li><a href="https://www.instagram.com/kaaskazakhstan/"
+                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                    class="footNavImg"><br>KAAS<br>Готовая мебель</a></li>
+                        <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS"
+                                class="footerNavLink"><img src="./img/logo/tiktok.svg" alt="tiktok.svg"
+                                    class="footNavImg"><br>TikTok<br></a></li>
+                        <li><a href="mailto: Info@kaas.kz" class="footerNavLink"><img src="./img/logo/gmail.svg"
+                                    alt="gmail.png" class="footNavImg"><br>Почта<br></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>KAAS Kitchens 2025</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/main.js"></script>
+    <script language="JavaScript" type="text/javascript" src="script.js"></script>
+
+    <section class="services" id="dialog-content" style="display: none;">
+        <div class="container">
+            <div class="services__grid">
+                <div class="services__card">
+                    <div class="servicesCard">
+                        <h3 class="serviceTopic">Оплата</h3>
+                        <div class="serviceTitle">
+                            <p class="serviceText">Мы&#160;принимаем наличные, безналичные, переводы от&#160;физических и
+                                юридических
+                                лиц. Рассрочка под 0% до
+                                24 мес</p>
+                            <img src="./img/logo/payment.svg" alt="payment" class="paymentImg">
+                        </div>
+                    </div>
+                    <div class="servicesCard">
+                        <h3 class="serviceTopic">Доставка</h3>
+                        <div class="serviceTitle">
+                            <p class="serviceText">Товар доставляется упакованный с&#160;полным описанием сборки продукции.
+                                Доставка осуществляется по
+                                всему Казахстану</p>
+                            <img src="./img/logo/delivery.svg" alt="delivery" class="deliveryImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="services__form">
+                    <h2>Оставьте заявку на&#160;подбор кухни для вас</h2>
+                    <form>
+                        <input type="text" placeholder="Ваше имя" class="input">
+                        <input type="tel" placeholder="Ваш телефон" class="input">
+                        <button class="hero__button">ОТПРАВИТЬ ЗАЯВКУ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" language="javascript">
+        function call() {
+          var msg   = $('#clickForm').serialize();
+           $.ajax({
+             type: 'POST',
+             url: 'assets/templates/mail/mail.php',
+             data: msg,
+             success: function(data) {
+               alert('Сообщение успешно отправлено!');
+               $('input[name=name].inputCall').val('');  
+               $('input[name=phone].inputCall').val('');  
+               $('input[name=email].inputCall').val('');
+               Fancybox.close();
+             },
+             error:  function(xhr, str){
+               alert('Возникла ошибка: ' + xhr.responseCode);
+             }
+           });
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/logo/favicon.ico">
+
+    <!-- <script src="https://kit.fontawesome.com/5950d23ec9.js" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>KAAS Kitchens</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container container">
+            <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
+            <nav class="header_middle">
+                <ul class="mainNav">
+                    <li><a href="closet.html" class="nav-item"><img src="./img/logo/cabinet.png" alt="cabinet.png"
+                                class="navImg"><br>Шкафы</a>
+                    </li>
+                    <li><a href="kitchen.html" class="nav-item"><img src="./img/logo/kitchen.png" alt="kitchen.png"
+                                class="navImg"><br>Кухни</a></li>
+                    <li><a href="showrooms.html" class="nav-item"><img src="./img/logo/location.png" alt="location.png"
+                                class="navImg"><br>Шоурумы</a></li>
+                    <!-- перетащить шоурумы и контакты в один раздел, добавить раздел "О Нас" -->
+                    <li><a href="about.html" class="nav-item"><img src="./img/logo/about.svg" alt="about.svg"
+                                class="navImg"><br>О&#160;нас</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header__right">
+                <div class="header__contact">
+                    <a href="tel:+77058323200" class="header__phone">+7&#160;(705-83)&#160;2-32-00</a>
+                    <span class="header__subtitle">Бесплатная консультация</span>
+                </div>
+                <a data-fancybox data-src="#dialog-content" class="header__button">ЗАКАЗАТЬ ЗВОНОК</a>
+            </div>
+            <!-- Улучшенная кнопка бургер-меню -->
+            <button class="header__burger" id="burger-btn" aria-label="Меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Закрыть меню">
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Улучшенное мобильное меню -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu__container">
+            <nav class="mobile-nav">
+                <ul>
+                    <li><a href="closet.html"><img src="./img/logo/cabinet.png" alt="cabinet.png" class="mobile-nav-img">Шкафы</a></li>
+                    <li><a href="kitchen.html"><img src="./img/logo/kitchen.png" alt="kitchen.png" class="mobile-nav-img">Кухни</a></li>
+                    <li><a href="showrooms.html"><img src="./img/logo/location.png" alt="location.png" class="mobile-nav-img">Шоурумы</a></li>
+                    <li><a href="about.html"><img src="./img/logo/about.svg" alt="about.svg" class="mobile-nav-img">О&#160;нас</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-contact">
+                <a href="tel:+77058323200" class="mobile-phone">+7&#160;(705-83)&#160;2-32-00</a>
+                <span class="mobile-subtitle">Бесплатная консультация</span>
+                <a data-fancybox data-src="#dialog-content" class="mobile-button">ЗАКАЗАТЬ ЗВОНОК</a>
+            </div>
+            <div class="mobile-social">
+                <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg" alt="WhatsApp"></a>
+                <a href="https://www.instagram.com/kaaskz/" class="mobile-social-link"><img
+                        src="./img/logo/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.instagram.com/kaaskazakhstan/" class="mobile-social-link"><img
+                        src="./img/logo/instagram.svg" alt="Instagram"></a>
+                <a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" class="mobile-social-link"><img
+                        src="./img/logo/tiktok.svg" alt="TikTok"></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h3 class="page-title">Шкаф KS&#160;&#8212; продуманный выбор для вашего дома со&#160;множеством вариаций наполнения.</h3>
+        <h4 class="page-subtitle">Стильное и&#160;надежное решение для любого интерьера.</h4>
+
+        <div class="filters">
+            <a href="closet.html" class="filter-button" data-category="Odnostvorchatyy">Одностворчатые</a>
+            <a href="closet2.html" class="filter-button" data-category="Dvukhstvorchatyy">Двухстворчатые</a>
+        </div>
+
+        <div class="product-grid" id="product-grid" data-images="img/Odno/KS-10/10.jpg,img/Odno/KS-10/4.jpg">
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-10" data-width="50" data-height="230"
+                data-depth="54" data-shelves="1" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый" data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-11-50x230h54-sm-belyi-135276411/?c=750000000&m=16675022&sr=1&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAabmnApLGp4_hVsldQ1zV6aEWhlwunLrk-vE83LXsTlCjBD8zno6_fm6rTM_aem_kAcu8A1N_4YD6I1mbmvlnQ"
+                data-features="Штанга для одежды">
+                <h3 class="product-title">Шкаф KS-10</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-10/KS-10-2.jpg" alt="Шкаф распашной" class="product-image">
+                </div>
+                <p class="product-description">Компактный одностворчатый шкаф с&#160;полкой, выдвижным ящиком и&#160;штангой для
+                    одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-11" data-width="50" data-height="230"
+                data-depth="54" data-shelves="1" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Штанга для одежды"
+                data-link="https://kaspi.kz/shop/p/modul-dlja-garderoba-kaas-ks-11-50x230h54-sm-belyi-135276375/?c=750000000&m=16675022&sr=4&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZFrukb9_4LyZCgzDos4oajZoPoO5cIz1JYtXEuiDF2I1WUlow0aVTzk2o_aem_Iw85L7hIUVFe7cStlSbkTw">
+                <h3 class="product-title">Шкаф KS-11</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-11/KS-11-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+                <!-- <div class="product-gallery">
+                    <div class="product-slider">
+                        <div class="slider-wrapper">
+                            Основные слайды 
+                            <div class="slider-item active">
+                                <img src="./img/Odno/KS-11/3 (2).jpg" alt="">
+                            </div>
+                            <div class="slider-item">
+                                <img src="./img/Odno/KS-11/10.jpg" alt="">
+                            </div>
+                        </div>
+                 </div>
+             -->
+            </div>
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-12" data-width="50" data-height="230"
+                data-depth="54" data-shelves="1" data-boxes="3" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Штанга для одежды"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-12-50x230h54-sm-belyi-135276336/?c=750000000&m=16675022&sr=7&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZnCZnLZdQaE0plBhpzudYHvtnaYiMtMdSt6UyeyfNxjY6qdkIBd8yurrQ_aem_Z0zf-9BGLQ8blexirRl60Q">
+                <h3 class="product-title">Шкаф KS-12</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-12/KS-12-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-13" data-width="50" data-height="230"
+                data-depth="54" data-shelves="3" data-boxes="3" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Нет"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-13-50x230h54-sm-belyi-135276362/?c=750000000&m=16675022&sr=6&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYjs-pMJfCJjZA8wx29IIfScMliI6QyMstFJ5o65rUVc_koe4X5DgjOc-I_aem_H15MdFbdeVhaqQ9nJBW8aA">
+                <h3 class="product-title">Шкаф KS-13</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-13/KS-13-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-14" data-width="50" data-height="230"
+                data-depth="54" data-shelves="3" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Нет"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-14-50x230h54-sm-belyi-135276329/?c=750000000&m=16675022&sr=2&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYROv-LhcgkEpm7m0ZrDU80isKC7cF0DcmIqkWqtragaYc50Hrt4oP1Pkc_aem_6s48AiXalGKbQKJzwWCClQ">
+                <h3 class="product-title">Шкаф KS-14</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-14/KS-14-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-15" data-width="50" data-height="230"
+                data-depth="54" data-shelves="4" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Нет"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-15-50x230h54-sm-belyi-135276319/?c=750000000">
+                <h3 class="product-title">Шкаф KS-15</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-15/KS-15-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-16" data-width="50" data-height="230"
+                data-depth="54" data-shelves="3" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-16-50x230h54-sm-belyi-135276312/?c=750000000&m=16675022&sr=9&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAabx7aHgpbwu5i5CJXwKI5gFl2ZilrrZOzD56EVu6fwHJdA5FWxJkauNiLs_aem_W4RZqHcE2sLnmqpzNimAkA"
+                data-features="Штанга для одежды" >
+                <h3 class="product-title">Шкаф KS-16</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-16/KS-16-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-17" data-width="50" data-height="230"
+                data-depth="54" data-shelves="2" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Штанга для одежды"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-17-50x230h54-sm-belyi-135276268/?c=750000000&m=16675022&sr=3&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZddxn_XSwbcJ1H6hKOt9DouLn6AHTUCWPndIsomds9Wy1MD4Lw97kCxq4_aem_JS6uBCUFY1s3VkOH3NTj8Q">
+                <h3 class="product-title">Шкаф KS-17</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-17/KS-17-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <div class="product-card" data-category="Odnostvorchatyy" data-id="KS-18" data-width="50" data-height="230"
+                data-depth="54" data-shelves="5" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+                data-features="Нет"
+                data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-18-50x230h54-sm-belyi-135276256/?c=750000000&m=16675022&sr=8&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZExIuQCgcKAqlgpM5ggh5t_-m7hbmnQum6LjDHy1kLD6-S8kqfOOGXswM_aem_f6ToaeLIW0xUnX8BU0Stvg">
+                <h3 class="product-title">Шкаф KS-18</h3>
+                <div class="product-image-container">
+                    <img src="./img/Odno/KS-18/KS-18-2.jpg" alt="Шкаф купе" class="product-image">
+                </div>
+                <p class="product-description">Элегантный одностворчатый шкаф с&#160;удобной системой хранения для
+                    повседневной одежды.</p>
+                <div class="product-action">Подробнее</div>
+            </div>
+
+            <!-- Другие карточки продуктов остаются без изменений -->
+
+            <div id="no-products-message" class="no-products hidden">
+                Товары данной категории не&#160;найдены
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для подробной информации о продукте -->
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&#215;</span>
+            <div class="modal-header">
+                <h2 class="modal-title" id="modal-product-title">Название шкафа</h2>
+            </div>
+            <div class="modal-body">
+                <div class="product-gallery">
+                    <div class="product-slider">
+                        <div class="slider-wrapper">
+                            <div class="slider-item active" data-category="Odnostvorchatyy">
+                                <img id="modal-product-image2" src="./img/Odno/KS-10/KS-10-1.jpg" alt="">
+                            </div>
+                            <div class="slider-item" data-category="defould">
+                                <img id="modal-product-image" src="" alt="">
+                            </div>
+
+                            <!-- Кнопки навигации слайдера -->
+                            <button class="slider-nav prev-btn" aria-label="Предыдущее изображение">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <button class="slider-nav next-btn" aria-label="Следующее изображение">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                        </div>
+
+                        <!-- Миниатюры изображений (опционально) -->
+                        <div class="product-thumbnails">
+                            <div class="thumbnail active" data-index="0">
+                                <img id="modal-product-image2" src="./img/Odno/KS-10/KS-10-1.jpg" alt="Миниатюра 1">
+                            </div>
+                            <div class="thumbnail" data-index="1">
+                                <img id="modal-product-image" src="./img/Odno/KS-10/KS-10-2.jpg" alt="Миниатюра 2">
+                            </div>
+                        </div>
+
+                        <!-- Индикаторы слайдов (точки) -->
+                        <div class="slider-indicators">
+                            <span class="indicator active" data-index="0"></span>
+                            <span class="indicator" data-index="1"></span>
+                        </div>
+                    </div>
+                    <!-- стили для модульного слайдера -->
+                    <style>
+                        /* Стили для слайдера изображений продукта */
+
+                        /* Контейнер галереи */
+                        .product-gallery {
+                            width: 100%;
+                            max-width: 400px;
+                            position: relative;
+                            margin: 0 auto;
+                        }
+
+                        /* Основной слайдер */
+                        .product-slider {
+                            border-radius: 8px;
+                            overflow: hidden;
+                            position: relative;
+                            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                            background-color: #fff;
+                            padding-bottom: 40px;
+                        }
+
+                        .slider-wrapper {
+                            position: relative;
+                            width: 100%;
+                            height: 400px;
+                            overflow: hidden;
+                        }
+
+                        .slider-item {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            opacity: 0;
+                            transition: opacity 0.5s ease;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                        }
+
+                        .slider-item.active {
+                            opacity: 1;
+                            z-index: 1;
+                        }
+
+                        .slider-item img {
+                            max-width: 100%;
+                            max-height: 100%;
+                            object-fit: contain;
+                        }
+
+                        /* Кнопки навигации */
+                        .slider-nav {
+                            position: absolute;
+                            top: 50%;
+                            transform: translateY(-50%);
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            background-color: rgba(255, 255, 255, 0.8);
+                            border: none;
+                            cursor: pointer;
+                            z-index: 2;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+                            transition: all 0.3s ease;
+                            color: #333;
+                        }
+
+                        .slider-nav:hover {
+                            background-color: #fff;
+                            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+                            color: #0192cb;
+                        }
+
+                        .prev-btn {
+                            left: 10px;
+                        }
+
+                        .next-btn {
+                            right: 10px;
+                        }
+
+                        /* Миниатюры */
+                        .product-thumbnails {
+                            display: flex;
+                            justify-content: center;
+                            gap: 10px;
+                            margin-top: 15px;
+                        }
+
+                        .thumbnail {
+                            width: 60px;
+                            height: 60px;
+                            border-radius: 6px;
+                            overflow: hidden;
+                            cursor: pointer;
+                            opacity: 0.6;
+                            transition: all 0.3s ease;
+                            border: 2px solid transparent;
+                        }
+
+                        .thumbnail:hover {
+                            opacity: 0.9;
+                        }
+
+                        .thumbnail.active {
+                            opacity: 1;
+                            border-color: #0192cb;
+                        }
+
+                        .thumbnail img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+
+                        /* Индикаторы (точки) */
+                        .slider-indicators {
+                            display: flex;
+                            justify-content: center;
+                            gap: 8px;
+                            margin-top: 15px;
+                        }
+
+                        .indicator {
+                            width: 8px;
+                            height: 8px;
+                            border-radius: 50%;
+                            background-color: #ccc;
+                            cursor: pointer;
+                            transition: all 0.3s ease;
+                        }
+
+                        .indicator.active {
+                            background-color: #0192cb;
+                            transform: scale(1.2);
+                        }
+
+                        /* Адаптивность */
+                        @media (max-width: 768px) {
+                            .slider-wrapper {
+                                height: 350px;
+                            }
+
+                            .thumbnail {
+                                width: 50px;
+                                height: 50px;
+                            }
+                        }
+
+                        @media (max-width: 480px) {
+                            .slider-wrapper {
+                                height: 280px;
+                            }
+
+                            .product-thumbnails {
+                                gap: 6px;
+                            }
+
+                            .thumbnail {
+                                width: 40px;
+                                height: 40px;
+                            }
+
+                            .slider-nav {
+                                width: 30px;
+                                height: 30px;
+                            }
+                        }
+
+                        /* Анимация при смене слайдов */
+                        @keyframes fadeIn {
+                            from {
+                                opacity: 0;
+                                transform: scale(0.95);
+                            }
+
+                            to {
+                                opacity: 1;
+                                transform: scale(1);
+                            }
+                        }
+
+                        .slider-item.active {
+                            animation: fadeIn 0.5s ease forwards;
+                        }
+
+                        /* Стиль для увеличения при наведении */
+                        .slider-item img {
+                            transition: transform 0.3s ease;
+                        }
+
+                        .slider-item:hover img {
+                            transform: scale(1.05);
+                        }
+                    </style>
+
+                    <!-- <div id="modalImg">
+                    <div class="modal-img" id="modalImg">
+                        <img id="modal-product-image" src="" alt="Изображение шкафа">
+                    </div> -->
+                </div>
+
+                <div class="modal-details">
+                    <h3 class="specs-title">Характеристики:</h3>
+                    <ul class="specs-list">
+                        <li>
+                            <span class="specs-label">Модель:</span>
+                            <span class="specs-value" id="modal-product-id">KS-10</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Тип:</span>
+                            <span class="specs-value" id="modal-product-type">Напольный</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Ширина:</span>
+                            <span class="specs-value" id="modal-product-width">50&#160;см</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Высота:</span>
+                            <span class="specs-value" id="modal-product-height">230&#160;см</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Глубина:</span>
+                            <span class="specs-value" id="modal-product-depth">54&#160;см</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Кол-во полок:</span>
+                            <span class="specs-value" id="modal-product-shelves">4 шт</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Кол-во ящиков:</span>
+                            <span class="specs-value" id="modal-product-boxes">2 шт</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Материал:</span>
+                            <span class="specs-value" id="modal-product-material">ЛДСП EGGER</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Цвет:</span>
+                            <span class="specs-value" id="modal-product-color">Белый</span>
+                        </li>
+                        <li>
+                            <span class="specs-label">Особенности:</span>
+                            <span class="specs-value" id="modal-product-features">Полка, выдвижной ящик,
+                                штанга</span>
+                        </li>
+                    </ul>
+
+                    <p class="product-description" id="modal-product-description">
+                        Шкаф KS&#160;&#8212; это стильное и&#160;функциональное решение для организации пространства и&#160;хранения
+                        одежды в
+                        современном интерьере. Изготовлен из&#160;высококачественных материалов с&#160;использованием
+                        фурнитуры
+                        Hafele, что обеспечивает долговечность и&#160;надежность конструкции.
+                    </p>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="order-button" id="modal-order-button">ЗАКАЗАТЬ ЭТОТ ШКАФ</button>
+            </div>
+        </div>
+    </div>
+
+    <section class="services" id="dialog-content" style="display: none;">
+        <div class="container">
+            <div class="services__grid">
+                <div class="services__card">
+                    <div class="servicesCard">
+                        <h3 class="serviceTopic">Оплата</h3>
+                        <div class="serviceTitle">
+                            <p class="serviceText">Мы&#160;принимаем наличные, безналичные, переводы от&#160;физических и
+                                юридических
+                                лиц. Рассрочка под 0% до
+                                24 мес</p>
+                            <img src="./img/payment.svg" alt="payment" class="paymentImg">
+                        </div>
+                    </div>
+                    <div class="servicesCard">
+                        <h3 class="serviceTopic">Доставка</h3>
+                        <div class="serviceTitle">
+                            <p class="serviceText">Товар доставляется упакованный с&#160;полным описанием сборки
+                                продукции.
+                                Доставка осуществляется по
+                                всему Казахстану</p>
+                            <img src="./img/delivery.svg" alt="delivery" class="deliveryImg">
+                        </div>
+                    </div>
+                </div>
+                <div class="services__form">
+                    <h2>Оставьте заявку на&#160;подбор кухни для вас</h2>
+                    <form>
+                        <input type="text" placeholder="Ваше имя" class="input">
+                        <input type="tel" placeholder="Ваш телефон" class="input">
+                        <button class="hero__button">ОТПРАВИТЬ ЗАЯВКУ</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__grid">
+                <!-- <a href="index.html"><img src="./img/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a> -->
+                <nav class="header_middle">
+                    <ul class="mainNav">
+                        <li><a href="https://wa.me/" class="footerNavLink"><img src="./img/logo/whatsapp.svg"
+                                    alt="whatsapp.svg" class="footNavImg"><br>WhatsApp</a>
+                        </li>
+                        <li><a href="https://www.instagram.com/kaaskz/"
+                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                    class="footNavImg"><br>KAAS<br>Мебель на&#160;заказ</a></li>
+                        <li><a href="https://www.instagram.com/kaaskazakhstan/"
+                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                    class="footNavImg"><br>KAAS<br>Готовая мебель</a></li>
+                        <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS"
+                                class="footerNavLink"><img src="./img/logo/tiktok.svg" alt="tiktok.svg"
+                                    class="footNavImg"><br>TikTok</a></li>
+                        <li><a href="mailto: Info@kaas.kz" class="footerNavLink"><img src="./img/logo/gmail.svg"
+                                    alt="gmail.png" class="footNavImg"><br>Почта</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer__bottom">
+                <p>KAAS Kitchens 2025</p>
+            </div>
+        </div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
+    <script language="JavaScript" type="text/javascript" src="./js/main.js"></script>
+    <script language="JavaScript" type="text/javascript" src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all filter buttons
+            const filterButtons = document.querySelectorAll('.filter-button');
+            // Get all product cards
+            const productCards = document.querySelectorAll('.product-card');
+            // Get the no products message
+            const noProductsMessage = document.getElementById('no-products-message');
+            // Get the modal
+            const modal = document.getElementById('product-modal');
+            // Get the <span> element that closes the modal
+            const closeModal = document.querySelector('.close-modal');
+
+            // Add click event listener to each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active');
+                    });
+
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    // Get the category to filter by
+                    const filterCategory = this.getAttribute('data-category');
+
+                    // Count visible products
+                    let visibleCount = 0;
+
+                    // Filter products
+                    productCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+
+                        if (filterCategory === 'all' || cardCategory === filterCategory) {
+                            card.style.display = 'block';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+
+                    // Show or hide the no products message
+                    if (visibleCount === 0) {
+                        noProductsMessage.classList.remove('hidden');
+                    } else {
+                        noProductsMessage.classList.add('hidden');
+                    }
+                });
+            });
+
+            // Add click handler for product cards
+            var productLink = ''
+            document.querySelectorAll('.product-action').forEach(button => {
+                button.addEventListener('click', function () {
+                    const productCard = this.closest('.product-card');
+                    const productTitle = productCard.querySelector('.product-title').textContent;
+                    const productImage = productCard.querySelector('.product-image').src;
+                    const productId = productCard.getAttribute('data-id');
+                    const productCategory = productCard.getAttribute('data-category');
+                    const productWidth = productCard.getAttribute('data-width');
+                    const productHeight = productCard.getAttribute('data-height');
+                    const productDepth = productCard.getAttribute('data-depth');
+                    const productShelves = productCard.getAttribute('data-shelves');
+                    const productBoxes = productCard.getAttribute('data-boxes');
+                    const productMaterial = productCard.getAttribute('data-material');
+                    const productColor = productCard.getAttribute('data-color');
+                    const productFeatures = productCard.getAttribute('data-features');
+                    const productDescription = productCard.querySelector('.product-description').textContent;
+                    productLink = productCard.getAttribute('data-link');
+                    console.log(productLink)
+
+                    // Заполняем модальное окно данными о продукте
+                    document.getElementById('modal-product-title').textContent = productTitle;
+                    document.getElementById('modal-product-image').src = productImage;
+                    document.getElementById('modal-product-image').alt = productTitle;
+                    document.getElementById('modal-product-id').textContent = productId;
+                    document.getElementById('modal-product-type').textContent = productCategory === 'Odnostvorchatyy' ? 'Одностворчатый' : 'Двухстворчатый';
+                    document.getElementById('modal-product-width').textContent = productWidth + ' см';
+                    document.getElementById('modal-product-height').textContent = productHeight + ' см';
+                    document.getElementById('modal-product-depth').textContent = productDepth + ' см';
+                    document.getElementById('modal-product-shelves').textContent = productShelves + ' шт';
+                    document.getElementById('modal-product-boxes').textContent = productBoxes + ' шт';
+                    document.getElementById('modal-product-material').textContent = productMaterial;
+                    document.getElementById('modal-product-color').textContent = productColor;
+                    document.getElementById('modal-product-features').textContent = productFeatures;
+                    document.getElementById('modal-product-description').textContent = productDescription;
+                    var kupiShkaff = document.getElementById('modal-order-button')
+                    kupiShkaff.addEventListener('click', () => {
+                        window.open(productLink,"_blank").focus
+                        productLink = ''
+                    })
+
+                    // Открываем модальное окно
+                    modal.style.display = 'block';
+
+                    // Запрет скролла на заднем фоне
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Закрытие модального окна при клике на кнопку "×"
+            closeModal.addEventListener('click', function () {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+
+            // Закрытие модального окна при клике вне его содержимого
+            window.addEventListener('click', function (event) {
+                if (event.target == modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+
+            // Обработчик для кнопки заказа в модальном окне
+            document.getElementById('modal-order-button').addEventListener('click', function () {
+                const productTitle = document.getElementById('modal-product-title').textContent;
+                // alert('Вы заказали: ' + productTitle + '\nМы свяжемся с вами в ближайшее время для уточнения деталей заказа.');
+
+                // Здесь можно добавить код для отправки формы заказа на сервер
+                // или открытия формы для заполнения контактных данных
+
+                // Закрываем модальное окно
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+    </script>
+
+    <!-- скрипт для модульного JS кода -->
+    <script>
+        // JavaScript для функционирования слайдера изображений продукта
+        document.addEventListener('DOMContentLoaded', function () {
+            // Отладочное сообщение
+            console.log("Начало инициализации слайдера");
+
+            // Инициализация слайдера
+            initProductSlider();
+
+            // Функция инициализации слайдера
+            function initProductSlider() {
+                // Получаем все необходимые элементы
+                const sliderItems = document.querySelectorAll('.slider-item');
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                const indicators = document.querySelectorAll('.indicator');
+                const prevBtn = document.querySelector('.prev-btn');
+                const nextBtn = document.querySelector('.next-btn');
+                const sliderWrapper = document.querySelector('.slider-wrapper');
+                const productGallery = document.querySelector('.product-gallery');
+
+                // Отладочные сообщения
+                console.log("Слайды:", sliderItems.length);
+                console.log("Кнопки навигации:", prevBtn ? "Найдено" : "Не найдено", nextBtn ? "Найдено" : "Не найдено");
+
+                // Заменяем отсутствующие изображения на заглушки
+                setupImageFallbacks();
+
+                // Если основные элементы не найдены, выходим из функции
+                if (!sliderItems.length) {
+                    console.error("Слайды не найдены. Проверьте наличие элементов с классом '.slider-item'");
+                    return;
+                }
+
+                // Создаем кнопки навигации, если они отсутствуют
+                if (!prevBtn || !nextBtn) {
+                    console.warn("Кнопки навигации не найдены. Создаем их автоматически");
+                    createNavigationButtons();
+                }
+
+                let currentIndex = 0;
+                const slideCount = sliderItems.length;
+
+                // Показываем первый слайд при инициализации
+                showSlide(0);
+
+                // Устанавливаем автосмену слайдов
+                let autoSlideInterval;
+                startAutoSlide();
+
+                // Обработчики для кнопок навигации
+                if (prevBtn) {
+                    prevBtn.addEventListener('click', function () {
+                        showSlide(currentIndex - 1);
+                        resetAutoSlideTimer();
+                    });
+                }
+
+                if (nextBtn) {
+                    nextBtn.addEventListener('click', function () {
+                        showSlide(currentIndex + 1);
+                        resetAutoSlideTimer();
+                    });
+                }
+
+                // Обработчики для миниатюр (если они есть)
+                if (thumbnails.length) {
+                    console.log("Миниатюры:", thumbnails.length);
+                    thumbnails.forEach((thumb, index) => {
+                        // Если нет атрибута data-index, добавляем его
+                        if (!thumb.hasAttribute('data-index')) {
+                            thumb.setAttribute('data-index', index);
+                        }
+
+                        thumb.addEventListener('click', function () {
+                            const slideIndex = parseInt(this.getAttribute('data-index'));
+                            if (!isNaN(slideIndex)) {
+                                showSlide(slideIndex);
+                                resetAutoSlideTimer();
+                            }
+                        });
+                    });
+                }
+
+                // Обработчики для индикаторов (точек)
+                if (indicators.length) {
+                    console.log("Индикаторы:", indicators.length);
+                    indicators.forEach((indicator, index) => {
+                        // Если нет атрибута data-index, добавляем его
+                        if (!indicator.hasAttribute('data-index')) {
+                            indicator.setAttribute('data-index', index);
+                        }
+
+                        indicator.addEventListener('click', function () {
+                            const slideIndex = parseInt(this.getAttribute('data-index'));
+                            if (!isNaN(slideIndex)) {
+                                showSlide(slideIndex);
+                                resetAutoSlideTimer();
+                            }
+                        });
+                    });
+                } else if (sliderItems.length > 1) {
+                    // Создаем индикаторы, если их нет, но есть несколько слайдов
+                    createIndicators();
+                }
+
+                // Добавляем обработчики свайпа для мобильных устройств
+                let touchStartX = 0;
+                let touchEndX = 0;
+
+                if (sliderWrapper) {
+                    sliderWrapper.addEventListener('touchstart', function (e) {
+                        touchStartX = e.changedTouches[0].screenX;
+                    }, { passive: true });
+
+                    sliderWrapper.addEventListener('touchend', function (e) {
+                        touchEndX = e.changedTouches[0].screenX;
+                        handleSwipe();
+                        resetAutoSlideTimer();
+                    }, { passive: true });
+                } else if (sliderItems.length > 0) {
+                    // Если нет обертки слайдера, используем контейнер первого слайда
+                    const slideContainer = sliderItems[0].parentElement;
+                    if (slideContainer) {
+                        console.log("Используем родительский элемент слайдов для обработки свайпов");
+                        slideContainer.addEventListener('touchstart', function (e) {
+                            touchStartX = e.changedTouches[0].screenX;
+                        }, { passive: true });
+
+                        slideContainer.addEventListener('touchend', function (e) {
+                            touchEndX = e.changedTouches[0].screenX;
+                            handleSwipe();
+                            resetAutoSlideTimer();
+                        }, { passive: true });
+                    }
+                }
+
+                // Функция для обработки свайпа
+                function handleSwipe() {
+                    const swipeThreshold = 50; // Минимальное расстояние для распознавания свайпа
+
+                    if (touchEndX < touchStartX - swipeThreshold) {
+                        // Свайп влево - следующий слайд
+                        showSlide(currentIndex + 1);
+                    } else if (touchEndX > touchStartX + swipeThreshold) {
+                        // Свайп вправо - предыдущий слайд
+                        showSlide(currentIndex - 1);
+                    }
+                }
+
+                // Функция отображения конкретного слайда
+                function showSlide(index) {
+                    // Обработка циклического перехода
+                    if (index < 0) {
+                        index = slideCount - 1;
+                    } else if (index >= slideCount) {
+                        index = 0;
+                    }
+
+                    // Обновляем активный класс на слайдах
+                    sliderItems.forEach(item => item.classList.remove('active'));
+                    sliderItems[index].classList.add('active');
+
+                    // Обновляем активный класс на миниатюрах
+                    if (thumbnails.length) {
+                        thumbnails.forEach(thumb => thumb.classList.remove('active'));
+                        if (thumbnails[index]) {
+                            thumbnails[index].classList.add('active');
+                        }
+                    }
+
+                    // Обновляем активный класс на индикаторах
+                    const updatedIndicators = document.querySelectorAll('.indicator');
+                    if (updatedIndicators.length) {
+                        updatedIndicators.forEach(ind => ind.classList.remove('active'));
+                        if (updatedIndicators[index]) {
+                            updatedIndicators[index].classList.add('active');
+                        }
+                    }
+
+                    // Обновляем текущий индекс
+                    currentIndex = index;
+
+                    console.log("Показан слайд:", index + 1, "из", slideCount);
+                }
+
+                // Функция запуска автоматической смены слайдов
+                function startAutoSlide() {
+                    if (slideCount > 1) {
+                        autoSlideInterval = setInterval(function () {
+                            showSlide(currentIndex + 1);
+                        }, 150000); // Смена слайда каждые 5 секунд
+                        console.log("Запущена автосмена слайдов");
+                    }
+                }
+
+                // Функция сброса таймера автоматической смены слайдов
+                function resetAutoSlideTimer() {
+                    clearInterval(autoSlideInterval);
+                    startAutoSlide();
+                }
+
+                // Останавливаем автосмену при наведении курсора на слайдер
+                if (productGallery) {
+                    productGallery.addEventListener('mouseenter', function () {
+                        clearInterval(autoSlideInterval);
+                    });
+
+                    productGallery.addEventListener('mouseleave', function () {
+                        startAutoSlide();
+                    });
+                } else {
+                    // Если нет галереи, используем контейнер слайдов
+                    const slideContainer = sliderItems[0].parentElement;
+                    if (slideContainer) {
+                        slideContainer.addEventListener('mouseenter', function () {
+                            clearInterval(autoSlideInterval);
+                        });
+
+                        slideContainer.addEventListener('mouseleave', function () {
+                            startAutoSlide();
+                        });
+                    }
+                }
+
+                // Поддержка клавиатурной навигации для доступности
+                document.addEventListener('keydown', function (e) {
+                    // Определяем контейнер (галерея или родитель слайдов)
+                    const container = productGallery || sliderItems[0].parentElement;
+
+                    // Проверяем, находится ли фокус внутри галереи или контейнера
+                    const activeElement = document.activeElement;
+                    const isContainerFocused = container && (container.contains(activeElement) ||
+                        activeElement === container);
+
+                    if (isContainerFocused) {
+                        if (e.key === 'ArrowLeft') {
+                            showSlide(currentIndex - 1);
+                            resetAutoSlideTimer();
+                        } else if (e.key === 'ArrowRight') {
+                            showSlide(currentIndex + 1);
+                            resetAutoSlideTimer();
+                        }
+                    }
+                });
+
+                // Функция для создания кнопок навигации
+                function createNavigationButtons() {
+                    // Находим контейнер для кнопок
+                    const container = sliderItems[0].parentElement;
+
+                    if (!container) return;
+
+                    // Создаем кнопку "Назад"
+                    if (!prevBtn) {
+                        const newPrevBtn = document.createElement('button');
+                        newPrevBtn.className = 'prev-btn';
+                        newPrevBtn.innerHTML = '❮';
+                        newPrevBtn.style.cssText = 'position: absolute; left: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;';
+                        container.appendChild(newPrevBtn);
+
+                        // Обновляем ссылку на кнопку
+                        prevBtn = newPrevBtn;
+
+                        // Добавляем обработчик события
+                        prevBtn.addEventListener('click', function () {
+                            showSlide(currentIndex - 1);
+                            resetAutoSlideTimer();
+                        });
+                    }
+
+                    // Создаем кнопку "Вперед"
+                    if (!nextBtn) {
+                        const newNextBtn = document.createElement('button');
+                        newNextBtn.className = 'next-btn';
+                        newNextBtn.innerHTML = '❯';
+                        newNextBtn.style.cssText = 'position: absolute; right: 10px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255,255,255,0.7); border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer;';
+                        container.appendChild(newNextBtn);
+
+                        // Обновляем ссылку на кнопку
+                        nextBtn = newNextBtn;
+
+                        // Добавляем обработчик события
+                        nextBtn.addEventListener('click', function () {
+                            showSlide(currentIndex + 1);
+                            resetAutoSlideTimer();
+                        });
+                    }
+
+                    // Добавляем относительное позиционирование контейнеру, если его нет
+                    if (window.getComputedStyle(container).position === 'static') {
+                        container.style.position = 'relative';
+                    }
+                }
+
+                // Функция для создания индикаторов
+                function createIndicators() {
+                    const container = sliderItems[0].parentElement;
+                    if (!container) return;
+
+                    // Создаем контейнер для индикаторов
+                    const indicatorsContainer = document.createElement('div');
+                    indicatorsContainer.className = 'indicators-container';
+                    indicatorsContainer.style.cssText = 'position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 8px;';
+                    container.appendChild(indicatorsContainer);
+
+                    // Создаем индикаторы для каждого слайда
+                    for (let i = 0; i < slideCount; i++) {
+                        const indicator = document.createElement('span');
+                        indicator.className = 'indicator';
+                        indicator.setAttribute('data-index', i);
+                        indicator.style.cssText = 'width: 12px; height: 12px; border-radius: 50%; background-color: rgba(255,255,255,0.5); cursor: pointer; transition: background-color 0.3s;';
+
+                        // Активный индикатор для первого слайда
+                        if (i === 0) {
+                            indicator.classList.add('active');
+                            indicator.style.backgroundColor = 'rgba(255,255,255,0.9)';
+                        }
+
+                        indicator.addEventListener('click', function () {
+                            const index = parseInt(this.getAttribute('data-index'));
+                            showSlide(index);
+                            resetAutoSlideTimer();
+                        });
+
+                        indicatorsContainer.appendChild(indicator);
+                    }
+                }
+
+                // Функция для настройки заглушек для отсутствующих изображений
+                function setupImageFallbacks() {
+                    // Получаем все изображения на странице слайдера
+                    const images = document.querySelectorAll('.slider-item img, .thumbnail img');
+
+                    // Базовая заглушка
+                    const placeholderUrl = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0iI2VlZWVlZSIvPjx0ZXh0IHg9IjUwJSIgeT0iNTAlIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMzYiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGRvbWluYW50LWJhc2VsaW5lPSJtaWRkbGUiIGZpbGw9IiM5OTk5OTkiPtCY0LfQvtCx0YDQsNC20LXQvdC40LUg0L3QtdC00L7RgdGC0YPQv9C90L48L3RleHQ+PC9zdmc+';
+
+                    images.forEach(img => {
+                        // Добавляем обработчик ошибки загрузки для каждого изображения
+                        img.addEventListener('error', function () {
+                            console.warn("Ошибка загрузки изображения:", this.src);
+                            this.src = placeholderUrl;
+                            this.alt = "Изображение недоступно";
+                        });
+
+                        // Немедленно заменяем известные проблемные изображения
+                        const imgSrc = img.getAttribute('src');
+                        if (imgSrc) {
+                            if (imgSrc.includes('10.jpg') || imgSrc.includes('17.jpg')) {
+                                console.log("Заменяем известное проблемное изображение:", imgSrc);
+                                img.src = placeholderUrl;
+                                img.alt = "Изображение недоступно";
+                            }
+                        }
+                    });
+
+                    // Проверка активных слайдов
+                    sliderItems.forEach(item => {
+                        const img = item.querySelector('img');
+                        if (!img) {
+                            console.warn("Слайд без изображения:", item);
+                            // Создаем изображение-заглушку, если изображения нет совсем
+                            const placeholder = document.createElement('img');
+                            placeholder.src = placeholderUrl;
+                            placeholder.alt = "Изображение отсутствует";
+                            placeholder.style.width = '100%';
+                            placeholder.style.height = 'auto';
+                            item.appendChild(placeholder);
+                        }
+                    });
+                }
+
+                // Инициализация слайдера с предзагрузкой изображений
+                preloadImages();
+
+                function preloadImages() {
+                    const imageUrls = Array.from(sliderItems).map(item => {
+                        const img = item.querySelector('img');
+                        return img ? img.src : null;
+                    }).filter(url => url);
+
+                    // Предзагружаем все изображения с обработкой ошибок
+                    imageUrls.forEach(url => {
+                        const img = new Image();
+                        img.onload = function () {
+                            console.log("Изображение успешно загружено:", url);
+                        };
+                        img.onerror = function () {
+                            console.warn("Не удалось предзагрузить изображение:", url);
+                        };
+                        img.src = url;
+                    });
+
+                    console.log("Предзагружено изображений:", imageUrls.length);
+                }
+
+                console.log("Слайдер успешно инициализирован");
+            }
+        });
+    </script>
+</body>
+
+</html>
