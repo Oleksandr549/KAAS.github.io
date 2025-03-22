@@ -18,55 +18,330 @@
     <title>KAAS Kitchens</title>
 </head>
 
-<body>
-    <header class="header">
-        <div class="header__container container">
-            <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
-            <nav class="header_middle">
-                <ul class="mainNav">
-                    <li><a href="closet.html" class="nav-item"><img src="./img/logo/cabinet.png" alt="cabinet.png"
-                                class="navImg"><br>Шкафы</a>
-                    </li>
-                    <li><a href="kitchen.html" class="nav-item"><img src="./img/logo/kitchen.png" alt="kitchen.png"
-                                class="navImg"><br>Кухни</a></li>
-                    <li><a href="showrooms.html" class="nav-item"><img src="./img/logo/location.png" alt="location.png"
-                                class="navImg"><br>Шоурумы</a></li>
-                    <!-- перетащить шоурумы и контакты в один раздел, добавить раздел "О Нас" -->
-                    <li><a href="about.html" class="nav-item"><img src="./img/logo/about.svg" alt="about.svg"
-                                class="navImg"><br>О&#160;нас</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="header__right">
-                <div class="header__contact">
-                    <a href="tel:+77058323200" class="header__phone">+7&#160;(705-83)&#160;2-32-00</a>
-                    <span class="header__subtitle">Бесплатная консультация</span>
-                </div>
-                <a data-fancybox data-src="#dialog-content" class="header__button">ЗАКАЗАТЬ ЗВОНОК</a>
-            </div>
-            <!-- Улучшенная кнопка бургер-меню -->
-            <button class="header__burger" id="burger-btn" aria-label="Меню">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Закрыть меню">
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </header>
-    <main class="mainCloset">
-        <section class="about-section">
-            <div class="container">
-                <div class="section-header">
-                    <h1>О&#160;нас</h1>
-                    <p>Торгово производственная компания KAAS&#160;&#8212; ваш надежный партнер в&#160;создании качественной мебели</p>
-                </div>
+<style>
+    .slider-container {
+        width: 100%;
+        max-width: 1000px;
+        
+        position: relative;
+    }
 
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>
+    .slider:hover .prev-btn,
+    .slider:hover .next-btn {
+      
+    }
+    .slider {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+        height: 330px;
+  
+        position: relative;
+        
+    }
+
+    .slide {
+        min-width: 100%;
+        height: 100%;
+        transition: transform 0.5s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .slide.active {
+        opacity: 1;
+        z-index: 1;
+    }
+
+    .image-container {
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        overflow: hidden;
+      
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider-controls {
+        display: flex;
+        justify-content: center;
+     
+        
+    }
+
+    .prev-btn{
+        left: 0;
+        top: 50%;
+        transform: translate(0%,-50%)
+    }
+    .next-btn{
+        right: 0;
+        top: 50%;
+        transform: translate(0%,-50%)
+    }
+    .prev-btn svg,
+    .next-btn svg{
+        width: 30px;
+        height: 30px;
+        stroke: white;
+    }
+    .prev-btn,
+    .next-btn {
+        
+      
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        background-color: #333;
+        color: white;
+        
+        margin: 0 10px;
+        cursor: pointer;
+        z-index: 1;
+       border-radius: 50%;
+        font-size: 16px;
+       transition: all 0.3s ease 0s;
+        
+    }
+
+    .prev-btn:hover,
+    .next-btn:hover {
+        background-color: #555;
+    }
+
+    .prev-btn:focus,
+    .next-btn:focus {
+    }
+
+    /* Dots navigation */
+    .dots-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        width: 100%;
+        gap: 5px;
+    }
+
+    .dot {
+        width: 100%;
+        height: 12px;
+     
+        background-color: #bbb;
+        
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #333;
+    }
+
+    /* Fullscreen mode styles */
+    .fullscreen-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .fullscreen-overlay.visible {
+        opacity: 1;
+    }
+
+    .fullscreen-image {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        transform: scale(0.95);
+        transition: transform 0.3s ease;
+    }
+
+    .fullscreen-overlay.visible .fullscreen-image {
+        transform: scale(1);
+    }
+
+    .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        color: white;
+        font-size: 40px;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    .close-fullscreen:hover {
+        color: #ccc;
+    }
+
+    /* Fullscreen navigation */
+    .fullscreen-nav {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 0 30px;
+        box-sizing: border-box;
+    }
+
+    .fullscreen-prev,
+    .fullscreen-next {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .fullscreen-prev:hover,
+    .fullscreen-next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Loading indicator */
+    .loading {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 40px;
+        height: 40px;
+        border: 4px solid rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: white;
+        animation: spin 1s infinite linear;
+        display: none;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    /* Responsive adjustments */
+  
+</style>
+
+<body>
+    <!-- Header -->
+
+    <header class="header">
+    <div class="header__container container">
+        <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
+        <nav class="header_middle">
+            <ul class="mainNav">
+                <li><a href="closet.html" class="nav-item">
+                    <!-- <img src="./img/logo/cabinet.png" alt="cabinet.png" -->
+                            <!-- class="navImg"> -->
+                            Шкафы</a>
+                </li>
+                <li><a href="kitchen.html" class="nav-item">
+                    <!-- <img src="./img/logo/kitchen.png" alt="kitchen.png" -->
+                            <!-- class="navImg"> -->
+                            Кухни</a></li>
+                <li><a href="showrooms.html" class="nav-item">
+                    <!-- <img src="./img/logo/location.png" alt="location.png" -->
+                            <!-- class="navImg"> -->
+                            Шоурумы</a></li>
+                <!-- перетащить шоурумы и контакты в один раздел, добавить раздел "О Нас" -->
+                <li><a href="about.html" class="nav-item">
+                    <!-- <img src="./img/logo/about.svg" alt="about.svg" class="navImg"> -->
+                    О&#160;нас</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__right">
+            <div class="header__contact">
+                <a href="tel:+77058323200" class="header__phone">+7&#160;(705-83)&#160;2-32-00</a>
+                <span class="header__subtitle">Бесплатная консультация</span>
+            </div>
+            <a data-fancybox data-src="#dialog-content" class="header__button">ЗАКАЗАТЬ ЗВОНОК</a>
+        </div>
+        <!-- Улучшенная кнопка бургер-меню -->
+        <button class="header__burger" id="burger-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Закрыть меню">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__container">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="closet.html"><img src="./img/logo/cabinet.png" alt="cabinet.png" class="mobile-nav-img">Шкафы</a></li>
+                <li><a href="kitchen.html"><img src="./img/logo/kitchen.png" alt="kitchen.png" class="mobile-nav-img">Кухни</a></li>
+                <li><a href="showrooms.html"><img src="./img/logo/location.png" alt="location.png" class="mobile-nav-img">Шоурумы</a></li>
+                <li><a href="about.html"><img src="./img/logo/about.svg" alt="about.svg" class="mobile-nav-img">О&#160;нас</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-contact">
+            <a href="tel:+77058323200" class="mobile-phone">+7&#160;(705-83)&#160;2-32-00</a>
+            <span class="mobile-subtitle">Бесплатная консультация</span>
+            <a data-fancybox data-src="#dialog-content" class="mobile-button">ЗАКАЗАТЬ ЗВОНОК</a>
+        </div>
+        <div class="mobile-social">
+            <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/kaaskz/" class="mobile-social-link"><img
+                    src="./img/logo/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.instagram.com/kaaskazakhstan/" class="mobile-social-link"><img
+                    src="./img/logo/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" class="mobile-social-link"><img
+                    src="./img/logo/tiktok.svg" alt="TikTok"></a>
+        </div>
+    </div>
+</div>
+    <main class="main">
+
+        <section class="about_section">
+            <div class="container about_container">
+
+                    <h2 class="title about-title">О&#160;нас</h2>
+
+                <div class="about-box">
+                    <div class="about-content">
+                        <p class="text about-text"><span>Торгово производственная компания KAAS</span>&#160;&#8212; ваш надежный партнер в&#160;создании качественной мебели
+                        </p>
+                        <p class="text about-text">
                             Торгово производственная компания <span class="highlight">KAAS</span> начала свою работу
                             <span class="highlight">с&#160;2021</span> года и&#160;за&#160;это время успела кратно вырасти от
                             небольшого
@@ -74,618 +349,424 @@
                             производства.
                         </p>
                     </div>
-                    <head>
-                        <meta charset="UTF-8">
-                        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                        <title>Dual Image Slider</title>
-                        <style>
-                            body {
-                                margin: 0;
-                                padding: 0;
-                                font-family: Arial, sans-serif;
-                                background-color: #f5f5f5;
-                            }
-                            
-                            .slider-container {
-                                width: 100%;
-                                max-width: 1000px;
-                                margin: -29px auto;
-                                position: relative;
-                            }
-                            
-                            .slider {
-                                display: flex;
-                                overflow: hidden;
-                                width: 100%;
-                                height: 230px;
-                                border-radius: 8px;
-                                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-                                position: relative;
-                            }
-                            
-                            .slide {
-                                min-width: 100%;
-                                transition: transform 0.5s ease;
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                opacity: 0;
-                                transition: opacity 0.5s ease;
-                                display: flex;
-                                justify-content: space-between;
-                            }
-                            
-                            .slide.active {
-                                opacity: 1;
-                                z-index: 1;
-                            }
-                            
-                            .image-container {
-                                width: 49%;
-                                height: 100%;
-                                cursor: pointer;
-                                overflow: hidden;
-                                border-radius: 4px;
-                            }
-                            
-                            .image-container img {
-                                width: 114%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-                            
-                            .slider-controls {
-                                display: flex;
-                                justify-content: center;
-                                margin-top: 15px;
-                            }
-                            
-                            .prev-btn, .next-btn {
-                                background-color: #333;
-                                color: white;
-                                border: none;
-                                padding: 10px 20px;
-                                margin: 0 10px;
-                                cursor: pointer;
-                                border-radius: 4px;
-                                font-size: 16px;
-                                transition: background-color 0.3s ease;
-                            }
-                            
-                            .prev-btn:hover, .next-btn:hover {
-                                background-color: #555;
-                            }
-                            
-                            .prev-btn:focus, .next-btn:focus {
-                                outline: 2px solid #007bff;
-                            }
-                            
-                            /* Dots navigation */
-                            .dots-container {
-                                display: flex;
-                                justify-content: center;
-                                margin-top: 10px;
-                            }
-                            
-                            .dot {
-                                width: 12px;
-                                height: 12px;
-                                border-radius: 50%;
-                                background-color: #bbb;
-                                margin: 0 5px;
-                                cursor: pointer;
-                                transition: background-color 0.3s ease;
-                            }
-                            
-                            .dot.active {
-                                background-color: #333;
-                            }
-                            
-                            /* Fullscreen mode styles */
-                            .fullscreen-overlay {
-                                display: none;
-                                position: fixed;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                background-color: rgba(0, 0, 0, 0.9);
-                                z-index: 1000;
-                                justify-content: center;
-                                align-items: center;
-                                opacity: 0;
-                                transition: opacity 0.3s ease;
-                            }
-                            
-                            .fullscreen-overlay.visible {
-                                opacity: 1;
-                            }
-                            
-                            .fullscreen-image {
-                                max-width: 90%;
-                                max-height: 90%;
-                                object-fit: contain;
-                                box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-                                transform: scale(0.95);
-                                transition: transform 0.3s ease;
-                            }
-                            
-                            .fullscreen-overlay.visible .fullscreen-image {
-                                transform: scale(1);
-                            }
-                            
-                            .close-fullscreen {
-                                position: absolute;
-                                top: 20px;
-                                right: 30px;
-                                color: white;
-                                font-size: 40px;
-                                cursor: pointer;
-                                transition: color 0.3s ease;
-                            }
-                            
-                            .close-fullscreen:hover {
-                                color: #ccc;
-                            }
-                            
-                            /* Fullscreen navigation */
-                            .fullscreen-nav {
-                                position: absolute;
-                                width: 100%;
-                                display: flex;
-                                justify-content: space-between;
-                                padding: 0 30px;
-                                box-sizing: border-box;
-                            }
-                            
-                            .fullscreen-prev, .fullscreen-next {
-                                background-color: rgba(0, 0, 0, 0.5);
-                                color: white;
-                                border: none;
-                                border-radius: 50%;
-                                width: 50px;
-                                height: 50px;
-                                font-size: 24px;
-                                cursor: pointer;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                transition: background-color 0.3s ease;
-                            }
-                            
-                            .fullscreen-prev:hover, .fullscreen-next:hover {
-                                background-color: rgba(0, 0, 0, 0.8);
-                            }
-                            
-                            /* Loading indicator */
-                            .loading {
-                                position: absolute;
-                                top: 50%;
-                                left: 50%;
-                                transform: translate(-50%, -50%);
-                                width: 40px;
-                                height: 40px;
-                                border: 4px solid rgba(255, 255, 255, 0.3);
-                                border-radius: 50%;
-                                border-top-color: white;
-                                animation: spin 1s infinite linear;
-                                display: none;
-                            }
-                            
-                            @keyframes spin {
-                                0% { transform: translate(-50%, -50%) rotate(0deg); }
-                                100% { transform: translate(-50%, -50%) rotate(360deg); }
-                            }
-                            
-                            /* Responsive adjustments */
-                            @media (max-width: 768px) {
-                                .image-container {
-                                    width: 48%;
-                                }
-                            }
-                        </style>
-                    </head>
-                    <body>
-                        <div class="slider-container">
-                            <div class="slider" id="imageSlider">
-                                <!-- Slides will be added dynamically -->
-                                <div class="loading" id="sliderLoading"></div>
-                            </div>
 
-                            <div class="dots-container" id="dotsContainer">
-                                <!-- Dots will be added dynamically -->
-                            </div>
-
-                            <div class="slider-controls">
-                                <button class="prev-btn" id="prevBtn" aria-label="Previous slide">Previous</button>
-                                <button class="next-btn" id="nextBtn" aria-label="Next slide">Next</button>
-                            </div>
+                    <div class="slider-container">
+                        <div class="slider" id="imageSlider">
+                            <!-- Slides will be added dynamically -->
+                            <div class="loading" id="sliderLoading"></div>
                         </div>
 
-                        <div class="fullscreen-overlay" id="fullscreenOverlay">
-                            <span class="close-fullscreen" id="closeFullscreen" aria-label="Close fullscreen view">&#215;</span>
-                            <div class="fullscreen-nav">
-                                <button class="fullscreen-prev" id="fullscreenPrev" aria-label="Previous image">&lt;</button>
-                                <button class="fullscreen-next" id="fullscreenNext" aria-label="Next image">&gt;</button>
-                            </div>
-                            <img class="fullscreen-image" id="fullscreenImage" src="" alt="Fullscreen Image">
-                            <div class="loading" id="fullscreenLoading"></div>
+                        <div class="dots-container" id="dotsContainer">
+                            <!-- Dots will be added dynamically -->
                         </div>
 
-                        <script>
-                            // Configuration
-                            const imageSlider = {
-                                // Edit this array to add your images
-                                images: [
-                                    {
-                                        url: "img/logo/brand.jpg",
-                                        alt: "Image 1"
-                                    },
-                                    {
-                                        url: "img/kaskelen/kaskelen1.jpg",
-                                        alt: "Image 2"
-                                    },
-                                    {
-                                        url: "img/kaskelen/blum.jpg",
-                                        alt: "Image 3"
-                                    },
-                                    {
-                                        url: "img/kaskelen/blum2.jpg",
-                                        alt: "Image 4"
-                                    },
-                                    {
-                                        url: "img/kaskelen/stanock2.jpg",
-                                        alt: "Image 5"
-                                    },
-                                    {
-                                        url: "img/kaskelen/stanock1.jpg",
-                                        alt: "Image 6"
+                        <div class="slider-controls">
+                            <button class="prev-btn" id="prevBtn" aria-label="Previous slide">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </button>
+                            <button class="next-btn" id="nextBtn" aria-label="Next slide">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="fullscreen-overlay" id="fullscreenOverlay">
+                        <span class="close-fullscreen" id="closeFullscreen" aria-label="Close fullscreen view">&#215;</span>
+                        <div class="fullscreen-nav">
+                            <button class="fullscreen-prev" id="fullscreenPrev" aria-label="Previous image">&lt;</button>
+                            <button class="fullscreen-next" id="fullscreenNext" aria-label="Next image">&gt;</button>
+                        </div>
+                        <img class="fullscreen-image" id="fullscreenImage" src="" alt="Fullscreen Image">
+                        <div class="loading" id="fullscreenLoading"></div>
+                    </div>
+
+                    <script>
+                        // Configuration
+                        const imageSlider = {
+                            // Edit this array to add your images
+                            images: [
+                                {
+                                    url: "img/logo/brand.jpg",
+                                    alt: "Image 1"
+                                },
+                                {
+                                    url: "img/kaskelen/kaskelen1.jpg",
+                                    alt: "Image 2"
+                                },
+                                {
+                                    url: "img/kaskelen/blum.jpg",
+                                    alt: "Image 3"
+                                },
+                                {
+                                    url: "img/kaskelen/blum2.jpg",
+                                    alt: "Image 4"
+                                },
+                                {
+                                    url: "img/kaskelen/stanock2.jpg",
+                                    alt: "Image 5"
+                                },
+                                {
+                                    url: "img/kaskelen/stanock1.jpg",
+                                    alt: "Image 6"
+                                }
+                            ],
+                            autoplay: true,          // Set to false to disable autoplay
+                            autoplaySpeed: 15000,     // Time between slides in milliseconds
+                            transitionSpeed: 500,    // Transition speed in milliseconds
+                            swipeEnabled: true,      // Enable swipe on touch devices
+                            imagesPerSlide: 1        // Show 2 images per slide
+                        };
+
+                        // Initialize variables
+                        let currentSlide = 0;
+                        let totalImages = imageSlider.images.length;
+                        let totalSlides = Math.ceil(totalImages / imageSlider.imagesPerSlide);
+                        let autoplayInterval;
+                        let touchStartX = 0;
+                        let touchEndX = 0;
+
+                        // DOM elements
+                        const slider = document.getElementById('imageSlider');
+                        const dotsContainer = document.getElementById('dotsContainer');
+                        const prevBtn = document.getElementById('prevBtn');
+                        const nextBtn = document.getElementById('nextBtn');
+                        const fullscreenOverlay = document.getElementById('fullscreenOverlay');
+                        const fullscreenImage = document.getElementById('fullscreenImage');
+                        const closeFullscreen = document.getElementById('closeFullscreen');
+                        const fullscreenPrev = document.getElementById('fullscreenPrev');
+                        const fullscreenNext = document.getElementById('fullscreenNext');
+                        const sliderLoading = document.getElementById('sliderLoading');
+                        const fullscreenLoading = document.getElementById('fullscreenLoading');
+
+                        // Initialize slider
+                        function initSlider() {
+                            // Create slides
+                            for (let i = 0; i < totalSlides; i++) {
+                                const slide = document.createElement('div');
+                                slide.className = `slide ${i === 0 ? 'active' : ''}`;
+                                slide.setAttribute('data-index', i);
+
+                                // Add two images to each slide
+                                for (let j = 0; j < imageSlider.imagesPerSlide; j++) {
+                                    const imageIndex = i * imageSlider.imagesPerSlide + j;
+
+                                    // Make sure we don't go beyond the images array
+                                    if (imageIndex < totalImages) {
+                                        const imageContainer = document.createElement('div');
+                                        imageContainer.className = 'image-container';
+                                        imageContainer.setAttribute('data-image-index', imageIndex);
+
+                                        const img = document.createElement('img');
+                                        img.src = imageSlider.images[imageIndex].url;
+                                        img.alt = imageSlider.images[imageIndex].alt || `Image ${imageIndex + 1}`;
+                                        img.loading = "lazy";
+
+                                        imageContainer.appendChild(img);
+                                        slide.appendChild(imageContainer);
+
+                                        // Add click event to open fullscreen
+                                        imageContainer.addEventListener('click', () => openFullscreen(imageIndex));
                                     }
-                                ],
-                                autoplay: true,          // Set to false to disable autoplay
-                                autoplaySpeed: 15000,     // Time between slides in milliseconds
-                                transitionSpeed: 500,    // Transition speed in milliseconds
-                                swipeEnabled: true,      // Enable swipe on touch devices
-                                imagesPerSlide: 2        // Show 2 images per slide
-                            };
-                            
-                            // Initialize variables
-                            let currentSlide = 0;
-                            let totalImages = imageSlider.images.length;
-                            let totalSlides = Math.ceil(totalImages / imageSlider.imagesPerSlide);
-                            let autoplayInterval;
-                            let touchStartX = 0;
-                            let touchEndX = 0;
-                            
-                            // DOM elements
-                            const slider = document.getElementById('imageSlider');
-                            const dotsContainer = document.getElementById('dotsContainer');
-                            const prevBtn = document.getElementById('prevBtn');
-                            const nextBtn = document.getElementById('nextBtn');
-                            const fullscreenOverlay = document.getElementById('fullscreenOverlay');
-                            const fullscreenImage = document.getElementById('fullscreenImage');
-                            const closeFullscreen = document.getElementById('closeFullscreen');
-                            const fullscreenPrev = document.getElementById('fullscreenPrev');
-                            const fullscreenNext = document.getElementById('fullscreenNext');
-                            const sliderLoading = document.getElementById('sliderLoading');
-                            const fullscreenLoading = document.getElementById('fullscreenLoading');
-                            
-                            // Initialize slider
-                            function initSlider() {
-                                // Create slides
-                                for (let i = 0; i < totalSlides; i++) {
-                                    const slide = document.createElement('div');
-                                    slide.className = `slide ${i === 0 ? 'active' : ''}`;
-                                    slide.setAttribute('data-index', i);
-                                    
-                                    // Add two images to each slide
-                                    for (let j = 0; j < imageSlider.imagesPerSlide; j++) {
-                                        const imageIndex = i * imageSlider.imagesPerSlide + j;
-                                        
-                                        // Make sure we don't go beyond the images array
-                                        if (imageIndex < totalImages) {
-                                            const imageContainer = document.createElement('div');
-                                            imageContainer.className = 'image-container';
-                                            imageContainer.setAttribute('data-image-index', imageIndex);
-                                            
-                                            const img = document.createElement('img');
-                                            img.src = imageSlider.images[imageIndex].url;
-                                            img.alt = imageSlider.images[imageIndex].alt || `Image ${imageIndex + 1}`;
-                                            img.loading = "lazy";
-                                            
-                                            imageContainer.appendChild(img);
-                                            slide.appendChild(imageContainer);
-                                            
-                                            // Add click event to open fullscreen
-                                            imageContainer.addEventListener('click', () => openFullscreen(imageIndex));
-                                        }
-                                    }
-                                    
-                                    slider.appendChild(slide);
-                                    
-                                    // Create dot
-                                    const dot = document.createElement('div');
-                                    dot.className = `dot ${i === 0 ? 'active' : ''}`;
-                                    dot.setAttribute('data-index', i);
-                                    dot.addEventListener('click', () => goToSlide(i));
-                                    dotsContainer.appendChild(dot);
                                 }
-                                
-                                // Event listeners
-                                prevBtn.addEventListener('click', () => changeSlide(-1));
-                                nextBtn.addEventListener('click', () => changeSlide(1));
-                                
-                                // Fullscreen navigation
-                                fullscreenPrev.addEventListener('click', () => changeFullscreenImage(-1));
-                                fullscreenNext.addEventListener('click', () => changeFullscreenImage(1));
-                                closeFullscreen.addEventListener('click', closeFullscreenView);
-                                
-                                // Click outside image to close
-                                fullscreenOverlay.addEventListener('click', function(event) {
-                                    if (event.target === this) {
-                                        closeFullscreenView();
-                                    }
-                                });
-                                
-                                // Handle keyboard navigation
-                                document.addEventListener('keydown', handleKeyDown);
-                                
-                                // Touch events for swipe
-                                if (imageSlider.swipeEnabled) {
-                                    slider.addEventListener('touchstart', handleTouchStart, false);
-                                    slider.addEventListener('touchend', handleTouchEnd, false);
-                                    fullscreenOverlay.addEventListener('touchstart', handleTouchStart, false);
-                                    fullscreenOverlay.addEventListener('touchend', handleTouchEnd, false);
+
+                                slider.appendChild(slide);
+
+                                // Create dot
+                                const dot = document.createElement('div');
+                                dot.className = `dot ${i === 0 ? 'active' : ''}`;
+                                dot.setAttribute('data-index', i);
+                                dot.addEventListener('click', () => goToSlide(i));
+                                dotsContainer.appendChild(dot);
+                            }
+
+                            // Event listeners
+                            prevBtn.addEventListener('click', () => changeSlide(-1));
+                            nextBtn.addEventListener('click', () => changeSlide(1));
+
+                            // Fullscreen navigation
+                            fullscreenPrev.addEventListener('click', () => changeFullscreenImage(-1));
+                            fullscreenNext.addEventListener('click', () => changeFullscreenImage(1));
+                            closeFullscreen.addEventListener('click', closeFullscreenView);
+
+                            // Click outside image to close
+                            fullscreenOverlay.addEventListener('click', function (event) {
+                                if (event.target === this) {
+                                    closeFullscreenView();
                                 }
-                                
-                                // Start autoplay if enabled
-                                if (imageSlider.autoplay && totalSlides > 1) {
-                                    startAutoplay();
-                                }
-                            }
-                            
-                            // Change slide function
-                            function changeSlide(direction) {
-                                goToSlide((currentSlide + direction + totalSlides) % totalSlides);
-                                
-                                // Reset autoplay timer if autoplay is enabled
-                                if (imageSlider.autoplay) {
-                                    stopAutoplay();
-                                    startAutoplay();
-                                }
-                            }
-                            
-                            // Go to specific slide
-                            function goToSlide(slideIndex) {
-                                if (slideIndex === currentSlide) return;
-                                
-                                // Hide current slide
-                                const currentSlideElement = document.querySelector(`.slide[data-index="${currentSlide}"]`);
-                                currentSlideElement.classList.remove('active');
-                                
-                                // Show new slide
-                                const newSlideElement = document.querySelector(`.slide[data-index="${slideIndex}"]`);
-                                newSlideElement.classList.add('active');
-                                
-                                // Update dots
-                                document.querySelector(`.dot[data-index="${currentSlide}"]`).classList.remove('active');
-                                document.querySelector(`.dot[data-index="${slideIndex}"]`).classList.add('active');
-                                
-                                // Update current slide index
-                                currentSlide = slideIndex;
-                            }
-                            
-                            // Open fullscreen function
-                            function openFullscreen(imageIndex) {
-                                showLoading(fullscreenLoading);
-                                
-                                // Set image source
-                                fullscreenImage.src = imageSlider.images[imageIndex].url;
-                                fullscreenImage.alt = imageSlider.images[imageIndex].alt || `Image ${imageIndex + 1}`;
-                                
-                                // Store the full image index for fullscreen navigation
-                                fullscreenImage.setAttribute('data-image-index', imageIndex);
-                                
-                                // Display fullscreen overlay
-                                fullscreenOverlay.style.display = 'flex';
-                                
-                                // Use setTimeout to allow the browser to process the display change
-                                setTimeout(() => {
-                                    fullscreenOverlay.classList.add('visible');
-                                }, 10);
-                                
-                                // Stop autoplay while in fullscreen
-                                stopAutoplay();
-                                
-                                // Image onload event
-                                fullscreenImage.onload = function() {
-                                    hideLoading(fullscreenLoading);
-                                };
-                                
-                                fullscreenImage.onerror = function() {
-                                    hideLoading(fullscreenLoading);
-                                    alert('Failed to load image');
-                                };
-                            }
-                            
-                            // Change fullscreen image
-                            function changeFullscreenImage(direction) {
-                                const currentImageIndex = parseInt(fullscreenImage.getAttribute('data-image-index'));
-                                const newIndex = (currentImageIndex + direction + totalImages) % totalImages;
-                                
-                                showLoading(fullscreenLoading);
-                                
-                                fullscreenImage.src = imageSlider.images[newIndex].url;
-                                fullscreenImage.alt = imageSlider.images[newIndex].alt || `Image ${newIndex + 1}`;
-                                fullscreenImage.setAttribute('data-image-index', newIndex);
-                                
-                                // Image onload event
-                                fullscreenImage.onload = function() {
-                                    hideLoading(fullscreenLoading);
-                                };
-                                
-                                fullscreenImage.onerror = function() {
-                                    hideLoading(fullscreenLoading);
-                                    alert('Failed to load image');
-                                };
-                            }
-                            
-                            // Close fullscreen function
-                            function closeFullscreenView() {
-                                fullscreenOverlay.classList.remove('visible');
-                                
-                                // Use setTimeout to allow the transition to complete
-                                setTimeout(() => {
-                                    fullscreenOverlay.style.display = 'none';
-                                }, imageSlider.transitionSpeed);
-                                
-                                // Restart autoplay if enabled
-                                if (imageSlider.autoplay) {
-                                    startAutoplay();
-                                }
-                                
-                                // Update the current slide to match the current image's slide
-                                const imageIndex = parseInt(fullscreenImage.getAttribute('data-image-index'));
-                                const slideIndex = Math.floor(imageIndex / imageSlider.imagesPerSlide);
-                                
-                                if (slideIndex !== currentSlide) {
-                                    goToSlide(slideIndex);
-                                }
-                            }
-                            
-                            // Autoplay functions
-                            function startAutoplay() {
-                                if (autoplayInterval) clearInterval(autoplayInterval);
-                                autoplayInterval = setInterval(() => {
-                                    changeSlide(1);
-                                }, imageSlider.autoplaySpeed);
-                            }
-                            
-                            function stopAutoplay() {
-                                if (autoplayInterval) {
-                                    clearInterval(autoplayInterval);
-                                    autoplayInterval = null;
-                                }
-                            }
-                            
+                            });
+
                             // Handle keyboard navigation
-                            function handleKeyDown(event) {
-                                const isFullscreenVisible = fullscreenOverlay.style.display === 'flex';
-                                
-                                switch (event.key) {
-                                    case 'ArrowLeft':
-                                        if (isFullscreenVisible) {
-                                            changeFullscreenImage(-1);
-                                        } else {
-                                            changeSlide(-1);
-                                        }
-                                        break;
-                                    case 'ArrowRight':
-                                        if (isFullscreenVisible) {
-                                            changeFullscreenImage(1);
-                                        } else {
-                                            changeSlide(1);
-                                        }
-                                        break;
-                                    case 'Escape':
-                                        if (isFullscreenVisible) {
-                                            closeFullscreenView();
-                                        }
-                                        break;
-                                }
+                            document.addEventListener('keydown', handleKeyDown);
+
+                            // Touch events for swipe
+                            if (imageSlider.swipeEnabled) {
+                                slider.addEventListener('touchstart', handleTouchStart, false);
+                                slider.addEventListener('touchend', handleTouchEnd, false);
+                                fullscreenOverlay.addEventListener('touchstart', handleTouchStart, false);
+                                fullscreenOverlay.addEventListener('touchend', handleTouchEnd, false);
                             }
-                            
-                            // Touch event handlers for swipe
-                            function handleTouchStart(event) {
-                                touchStartX = event.changedTouches[0].screenX;
+
+                            // Start autoplay if enabled
+                            if (imageSlider.autoplay && totalSlides > 1) {
+                                startAutoplay();
                             }
-                            
-                            function handleTouchEnd(event) {
-                                touchEndX = event.changedTouches[0].screenX;
-                                handleSwipe();
+                        }
+
+                        // Change slide function
+                        function changeSlide(direction) {
+                            goToSlide((currentSlide + direction + totalSlides) % totalSlides);
+
+                            // Reset autoplay timer if autoplay is enabled
+                            if (imageSlider.autoplay) {
+                                stopAutoplay();
+                                startAutoplay();
                             }
-                            
-                            function handleSwipe() {
-                                const isFullscreenVisible = fullscreenOverlay.style.display === 'flex';
-                                const swipeThreshold = 50; // Minimum distance to register as a swipe
-                                
-                                if (touchEndX - touchStartX > swipeThreshold) {
-                                    // Swipe right
+                        }
+
+                        // Go to specific slide
+                        function goToSlide(slideIndex) {
+                            if (slideIndex === currentSlide) return;
+
+                            // Hide current slide
+                            const currentSlideElement = document.querySelector(`.slide[data-index="${currentSlide}"]`);
+                            currentSlideElement.classList.remove('active');
+
+                            // Show new slide
+                            const newSlideElement = document.querySelector(`.slide[data-index="${slideIndex}"]`);
+                            newSlideElement.classList.add('active');
+
+                            // Update dots
+                            document.querySelector(`.dot[data-index="${currentSlide}"]`).classList.remove('active');
+                            document.querySelector(`.dot[data-index="${slideIndex}"]`).classList.add('active');
+
+                            // Update current slide index
+                            currentSlide = slideIndex;
+                        }
+
+                        // Open fullscreen function
+                        function openFullscreen(imageIndex) {
+                            showLoading(fullscreenLoading);
+
+                            // Set image source
+                            fullscreenImage.src = imageSlider.images[imageIndex].url;
+                            fullscreenImage.alt = imageSlider.images[imageIndex].alt || `Image ${imageIndex + 1}`;
+
+                            // Store the full image index for fullscreen navigation
+                            fullscreenImage.setAttribute('data-image-index', imageIndex);
+
+                            // Display fullscreen overlay
+                            fullscreenOverlay.style.display = 'flex';
+
+                            // Use setTimeout to allow the browser to process the display change
+                            setTimeout(() => {
+                                fullscreenOverlay.classList.add('visible');
+                            }, 10);
+
+                            // Stop autoplay while in fullscreen
+                            stopAutoplay();
+
+                            // Image onload event
+                            fullscreenImage.onload = function () {
+                                hideLoading(fullscreenLoading);
+                            };
+
+                            fullscreenImage.onerror = function () {
+                                hideLoading(fullscreenLoading);
+                                alert('Failed to load image');
+                            };
+                        }
+
+                        // Change fullscreen image
+                        function changeFullscreenImage(direction) {
+                            const currentImageIndex = parseInt(fullscreenImage.getAttribute('data-image-index'));
+                            const newIndex = (currentImageIndex + direction + totalImages) % totalImages;
+
+                            showLoading(fullscreenLoading);
+
+                            fullscreenImage.src = imageSlider.images[newIndex].url;
+                            fullscreenImage.alt = imageSlider.images[newIndex].alt || `Image ${newIndex + 1}`;
+                            fullscreenImage.setAttribute('data-image-index', newIndex);
+
+                            // Image onload event
+                            fullscreenImage.onload = function () {
+                                hideLoading(fullscreenLoading);
+                            };
+
+                            fullscreenImage.onerror = function () {
+                                hideLoading(fullscreenLoading);
+                                alert('Failed to load image');
+                            };
+                        }
+
+                        // Close fullscreen function
+                        function closeFullscreenView() {
+                            fullscreenOverlay.classList.remove('visible');
+
+                            // Use setTimeout to allow the transition to complete
+                            setTimeout(() => {
+                                fullscreenOverlay.style.display = 'none';
+                            }, imageSlider.transitionSpeed);
+
+                            // Restart autoplay if enabled
+                            if (imageSlider.autoplay) {
+                                startAutoplay();
+                            }
+
+                            // Update the current slide to match the current image's slide
+                            const imageIndex = parseInt(fullscreenImage.getAttribute('data-image-index'));
+                            const slideIndex = Math.floor(imageIndex / imageSlider.imagesPerSlide);
+
+                            if (slideIndex !== currentSlide) {
+                                goToSlide(slideIndex);
+                            }
+                        }
+
+                        // Autoplay functions
+                        function startAutoplay() {
+                            if (autoplayInterval) clearInterval(autoplayInterval);
+                            autoplayInterval = setInterval(() => {
+                                changeSlide(1);
+                            }, imageSlider.autoplaySpeed);
+                        }
+
+                        function stopAutoplay() {
+                            if (autoplayInterval) {
+                                clearInterval(autoplayInterval);
+                                autoplayInterval = null;
+                            }
+                        }
+
+                        // Handle keyboard navigation
+                        function handleKeyDown(event) {
+                            const isFullscreenVisible = fullscreenOverlay.style.display === 'flex';
+
+                            switch (event.key) {
+                                case 'ArrowLeft':
                                     if (isFullscreenVisible) {
                                         changeFullscreenImage(-1);
                                     } else {
                                         changeSlide(-1);
                                     }
-                                } else if (touchStartX - touchEndX > swipeThreshold) {
-                                    // Swipe left
+                                    break;
+                                case 'ArrowRight':
                                     if (isFullscreenVisible) {
                                         changeFullscreenImage(1);
                                     } else {
                                         changeSlide(1);
                                     }
+                                    break;
+                                case 'Escape':
+                                    if (isFullscreenVisible) {
+                                        closeFullscreenView();
+                                    }
+                                    break;
+                            }
+                        }
+
+                        // Touch event handlers for swipe
+                        function handleTouchStart(event) {
+                            touchStartX = event.changedTouches[0].screenX;
+                        }
+
+                        function handleTouchEnd(event) {
+                            touchEndX = event.changedTouches[0].screenX;
+                            handleSwipe();
+                        }
+
+                        function handleSwipe() {
+                            const isFullscreenVisible = fullscreenOverlay.style.display === 'flex';
+                            const swipeThreshold = 50; // Minimum distance to register as a swipe
+
+                            if (touchEndX - touchStartX > swipeThreshold) {
+                                // Swipe right
+                                if (isFullscreenVisible) {
+                                    changeFullscreenImage(-1);
+                                } else {
+                                    changeSlide(-1);
+                                }
+                            } else if (touchStartX - touchEndX > swipeThreshold) {
+                                // Swipe left
+                                if (isFullscreenVisible) {
+                                    changeFullscreenImage(1);
+                                } else {
+                                    changeSlide(1);
                                 }
                             }
-                            
-                            // Loading indicator functions
-                            function showLoading(loadingElement) {
-                                loadingElement.style.display = 'block';
-                            }
-                            
-                            function hideLoading(loadingElement) {
-                                loadingElement.style.display = 'none';
-                            }
-                            
-                            // Preload images for smoother experience
-                            function preloadImages() {
-                                showLoading(sliderLoading);
-                                
-                                let imagesLoaded = 0;
-                                
-                                imageSlider.images.forEach((image) => {
-                                    const img = new Image();
-                                    img.src = image.url;
-                                    
-                                    img.onload = function() {
-                                        imagesLoaded++;
-                                        if (imagesLoaded === imageSlider.images.length) {
-                                            hideLoading(sliderLoading);
-                                            initSlider();
-                                        }
-                                    };
-                                    
-                                    img.onerror = function() {
-                                        imagesLoaded++;
-                                        console.error(`Failed to load image: ${image.url}`);
-                                        if (imagesLoaded === imageSlider.images.length) {
-                                            hideLoading(sliderLoading);
-                                            initSlider();
-                                        }
-                                    };
-                                });
-                            }
-                            
-                            // Check if all images are loaded
-                            if (document.readyState === 'loading') {
-                                document.addEventListener('DOMContentLoaded', preloadImages);
-                            } else {
-                                preloadImages();
-                            }
-                            
-                            // Clean up on page unload
-                            window.addEventListener('beforeunload', function() {
-                                stopAutoplay();
-                                document.removeEventListener('keydown', handleKeyDown);
+                        }
+
+                        // Loading indicator functions
+                        function showLoading(loadingElement) {
+                            loadingElement.style.display = 'block';
+                        }
+
+                        function hideLoading(loadingElement) {
+                            loadingElement.style.display = 'none';
+                        }
+
+                        // Preload images for smoother experience
+                        function preloadImages() {
+                            showLoading(sliderLoading);
+
+                            let imagesLoaded = 0;
+
+                            imageSlider.images.forEach((image) => {
+                                const img = new Image();
+                                img.src = image.url;
+
+                                img.onload = function () {
+                                    imagesLoaded++;
+                                    if (imagesLoaded === imageSlider.images.length) {
+                                        hideLoading(sliderLoading);
+                                        initSlider();
+                                    }
+                                };
+
+                                img.onerror = function () {
+                                    imagesLoaded++;
+                                    console.error(`Failed to load image: ${image.url}`);
+                                    if (imagesLoaded === imageSlider.images.length) {
+                                        hideLoading(sliderLoading);
+                                        initSlider();
+                                    }
+                                };
                             });
-                        </script>
-                    </body>
-                </div>
+                        }
 
-                <div class="mission">
-                    <h2>Наша миссия</h2>
-                    <p>Создавать качественную, функциональную и&#160;доступную мебель, которая делает жизнь наших клиентов
-                        комфортнее и&#160;уютнее</p>
-                </div>
+                        // Check if all images are loaded
+                        if (document.readyState === 'loading') {
+                            document.addEventListener('DOMContentLoaded', preloadImages);
+                        } else {
+                            preloadImages();
+                        }
 
+                        // Clean up on page unload
+                        window.addEventListener('beforeunload', function () {
+                            stopAutoplay();
+                            document.removeEventListener('keydown', handleKeyDown);
+                        });
+                    </script>
+
+                </div>
+            </div>
+        </section>
+        <section class="hits_section">
+            <div class="hits_container container">
+                <div class="hits_contant">
+                    <h2 class="hits_title">
+                        <span>Мы&#160;создаем не&#160;просто мебель</span>&#160;&#8212; мы&#160;создаем уют, стиль и&#160;комфорт в&#160;каждом доме
+                    </h2>
+                    <div class="hits_Description">
+                        <p class="text">Наши изделия сочетают качество, функциональность и&#160;современный дизайн, делая ваш
+                            дом местом, куда хочется возвращаться снова и&#160;снова.</p>
+                    </div>
+                    <button type="button" class="btn hits_btn">Заказать звонок</button>
+                </div>
+            </div>
+
+        </section>
+        <section class="stats_section">
+            <div class="container">
+                <H2 class="title stats-title">Мы&#160;растем, создаем, вдохновляем</H2>
                 <div class="stats-grid">
                     <div class="stat-item">
                         <div class="stat-number" id="projectCounter">0</div>
@@ -704,57 +785,96 @@
                         <div class="stat-label">Лет на&#160;рынке</div>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="section-header">
-                    <h2>Наши преимущества</h2>
-                </div>
+        <section class="advantages_section">
+            <div class="container">
+                <h2 class="title title-advantages">Наши преимущества</h2>
+
                 <div class="advantages">
                     <div class="advantage-item">
-                        <div class="advantage-icon">🏭</div>
+                        <div class="advantage-icon">
+                            <div class="icon-bg">
+                             <img src="./img/conveyor-belt.gif" alt="gig">
+                            </div>
+                        </div>
                         <h3>Собственное производство</h3>
                         <p>Полный контроль качества на&#160;всех этапах производства</p>
                     </div>
                     <div class="advantage-item">
-                        <div class="advantage-icon">⚡</div>
+                        <div class="advantage-icon">
+                            <div class="icon-bg">
+                                <img src="./img/speedometer.gif" alt="gig">
+                            </div>
+                        </div>
                         <h3>Быстрые сроки</h3>
                         <p>Оптимизированный процесс производства и&#160;монтажа</p>
                     </div>
                     <div class="advantage-item">
-                        <div class="advantage-icon">💎</div>
+                        <div class="advantage-icon">
+                            <div class="icon-bg">
+                                <img src="./img/materials.gif" alt="fig">
+                            </div>
+                        </div>
                         <h3>Качественные материалы</h3>
                         <p>Работаем только с&#160;проверенными поставщиками</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="section-header">
-                    <h2>Процесс работы</h2>
-                </div>
+        <section class="process_section">
+            <div class="container">
+                <h2 class="title process-title">Процесс работы</h2>
+
                 <div class="process-steps">
-                    <div class="process-step">
+                    <div class="process-step step-first">
                         <div class="step-number">1</div>
                         <h3>Консультация</h3>
                         <p>Обсуждение проекта и&#160;ваших пожеланий</p>
+
                     </div>
-                    <div class="process-step">
+                    <div class="process-step step-img">
+                       <img src="./img/kons.jpg" alt="img">
+
+                    </div>
+
+                     <div class="process-step step-img">
+                        <img src="./img/chertez.jpg" alt="img">
+                    </div>
+                        <div class="process-step step-img">
+                            <img src="./img/производство.jpg" alt="img">
+
+                         </div>
+
+                     <div class="process-step step-img">
+                        <img src="https://praktikagroup.ru/upload/medialibrary/d76/d767ceaab8d44e5c8bdd940ff750a64f.jpg" alt="img">
+
+                     </div>
+                    <div class="process-step step-second">
                         <div class="step-number">2</div>
                         <h3>Проектирование</h3>
                         <p>Создание дизайн-проекта и&#160;расчет стоимости</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step step-three">
                         <div class="step-number">3</div>
                         <h3>Производство</h3>
                         <p>Изготовление мебели на&#160;собственном производстве</p>
                     </div>
-                    <div class="process-step">
+                    <div class="process-step step-four">
                         <div class="step-number">4</div>
                         <h3>Монтаж</h3>
                         <p>Профессиональная установка и&#160;гарантийное обслуживание</p>
                     </div>
                 </div>
+            </div>
+        </section>
 
-                <div class="section-header">
-                    <h2>Наши партнеры</h2>
-                </div>
+        <section class="partners_section">
+            <div class="container partners_container">
+                <h2 class="title partners-title">Наши партнеры</h2>
+
                 <div class="partners">
                     <img src="./img/logo/blum2.svg" alt="Партнер 1" class="partner-logo">
                     <img src="./img/logo/Boyard.svg" alt="Партнер 2" class="partner-logo">
@@ -763,35 +883,108 @@
                     <img src="./img/logo/neomarm.svg" alt="Партнер 5" class="partner-logo">
                 </div>
             </div>
+
         </section>
-        <footer class="footer">
-        <div class="container">
-            <div class="footer__grid">
-                <!-- <a href="index.html"><img src="./img/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a> -->
-                <nav class="header_middle">
-                    <ul class="mainNav">
-                        <li><a href="https://wa.me/" class="footerNavLink"><img src="./img/logo/whatsapp.svg"
-                                    alt="whatsapp.svg" class="footNavImg"><br>WhatsApp<br></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/kaaskz/"
-                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
-                                    class="footNavImg"><br>KAAS<br>Мебель на&#160;заказ</a></li>
-                        <li><a href="https://www.instagram.com/kaaskazakhstan/"
-                                class="footerNavLink"><img src="./img/logo/instagram.svg" alt="instagram.svg"
-                                    class="footNavImg"><br>KAAS<br>Готовая мебель</a></li>
-                        <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS"
-                                class="footerNavLink"><img src="./img/logo/tiktok.svg" alt="tiktok.svg"
-                                    class="footNavImg"><br>TikTok<br></a></li>
-                        <li><a href="mailto: Info@kaas.kz" class="footerNavLink"><img src="./img/logo/gmail.svg"
-                                    alt="gmail.png" class="footNavImg"><br>Почта<br></a></li>
-                    </ul>
-                </nav>
+        </div>
+
+        <!-- <footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+           
+            <nav class="header_middle">
+                <ul class="mainNav">
+                    <li><a href="https://wa.me/" class="footerNavLink">
+                        <img src="./img/logo/whatsapp.svg"
+                                alt="whatsapp.svg" class="footNavImg">WhatsApp</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/kaaskz/"
+                            class="footerNavLink">
+                            <img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                class="footNavImg">KAASМебель на заказ</a></li>
+                    <li><a href="https://www.instagram.com/kaaskazakhstan/"
+                            class="footerNavLink">
+                            <img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                class="footNavImg">KAASГотовая мебель</a></li>
+                    <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS"
+                            class="footerNavLink">
+                            <img src="./img/logo/tiktok.svg" alt="tiktok.svg"
+                                class="footNavImg">TikTok</a></li>
+                    <li><a href="mailto: Info@kaas.kz" class="footerNavLink"><img src="./img/logo/gmail.svg"
+                                alt="gmail.png" class="footNavImg">Почта</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__bottom">
+            <p>KAAS Kitchens 2025</p>
+        </div>
+    </div>
+</footer> -->
+
+<footer class="footer">
+    <div class="footer_container container">
+        <div class="footer_list">
+            <div class="footer_item footer_item-logo">
+                <a href="#"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="footer_logo"> KAAS Kitchens</a>
+                <div class="footer_map" >
+                    <a href="showrooms.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Назарбаева 223</a>
+                    <a href="showrooms1.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Бауыржана Момышулы, 5/4</a>
+                    <a href="showrooms2.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        проспект Туран, 53В</a>
+                </div>
             </div>
-            <div class="footer__bottom">
-                <p>KAAS Kitchens 2025</p>
+            <div class="footer_item">
+                <ul class="footer_nav-list">
+                    <li><a href="closet.html" class="footer_nav-item">
+                                Шкафы</a>
+                    </li>
+                    <li><a href="kitchen.html" class="footer_nav-item">
+                                Кухни</a></li>
+                    <li><a href="showrooms.html" class="footer_nav-item">
+                                Шоурумы</a></li>
+                    <li><a href="about.html" class="footer_nav-item">
+                        О&#160;нас</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <ul class="footer_nav-list">
+                    <li><a href="closet.html" class="footer_nav-item">
+                                Instagram</a>
+                    </li>
+                    <li><a href="kitchen.html" class="footer_nav-item">
+                                Youtube</a></li>
+                    <li><a href="showrooms.html" class="footer_nav-item">
+                                facebook</a></li>
+                    <li><a href="about.html" class="footer_nav-item">
+                        twitter</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_item item-contact">
+
+                    <div class="footer__contact">
+                        <a href="tel:+77058323200" class="footer__phone">+7&#160;(705-83)&#160;2-32-00</a>
+                        <span class="footer__subtitle">Бесплатная консультация</span>
+                    </div>
+                    <a data-fancybox data-src="#dialog-content" class="footer__button">ЗАКАЗАТЬ ЗВОНОК</a>
+
             </div>
         </div>
-        </footer>
+        <div class="footer_bottom">
+          <div><p> &#169; KAAS Kitchens 2025</p></div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term of&#160;use</a>
+        </div>
+        </div>
+    </div>
+</footer>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
@@ -894,10 +1087,10 @@
             <div class="mobile-menu__container">
                 <nav class="mobile-nav">
                     <ul>
-                        <li style="--item-index: 0;"><a href="closet.html"><img src="./img/logo/cabinet.png" alt="cabinet.png"
-                                    class="mobile-nav-img">Шкафы</a></li>
-                        <li style="--item-index: 1;"><a href="kitchen.html"><img src="./img/logo/kitchen.png" alt="kitchen.png"
-                                    class="mobile-nav-img">Кухни</a></li>
+                        <li style="--item-index: 0;"><a href="closet.html"><img src="./img/logo/cabinet.png"
+                                    alt="cabinet.png" class="mobile-nav-img">Шкафы</a></li>
+                        <li style="--item-index: 1;"><a href="kitchen.html"><img src="./img/logo/kitchen.png"
+                                    alt="kitchen.png" class="mobile-nav-img">Кухни</a></li>
                         <li style="--item-index: 2;"><a href="showrooms.html"><img src="./img/logo/location.png"
                                     alt="location.png" class="mobile-nav-img">Шоурумы</a></li>
                         <li style="--item-index: 3;"><a href="about.html"><img src="./img/logo/about.svg" alt="about.svg"
@@ -910,7 +1103,8 @@
                     <a data-fancybox="" data-src="#dialog-content" class="mobile-button">ЗАКАЗАТЬ ЗВОНОК</a>
                 </div>
                 <div class="mobile-social">
-                    <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg" alt="WhatsApp"></a>
+                    <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg"
+                            alt="WhatsApp"></a>
                     <a href="https://www.instagram.com/kaaskz/" class="mobile-social-link"><img
                             src="./img/logo/instagram.svg" alt="Instagram"></a>
                     <a href="https://www.instagram.com/kaaskazakhstan/" class="mobile-social-link"><img
