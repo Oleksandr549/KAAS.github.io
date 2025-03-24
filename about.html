@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 
 <head>
     <meta charset="UTF-8">
@@ -19,136 +19,7 @@
 </head>
 
 <style>
-    .slider-container {
-        width: 100%;
-        max-width: 1000px;
-        
-        position: relative;
-    }
-
-    .slider:hover .prev-btn,
-    .slider:hover .next-btn {
-      
-    }
-    .slider {
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-        height: 330px;
-  
-        position: relative;
-        
-    }
-
-    .slide {
-        min-width: 100%;
-        height: 100%;
-        transition: transform 0.5s ease;
-        position: absolute;
-        top: 0;
-        left: 0;
-        opacity: 0;
-        transition: opacity 0.5s ease;
-        display: flex;
-        justify-content: space-between;
-    }
-
-    .slide.active {
-        opacity: 1;
-        z-index: 1;
-    }
-
-    .image-container {
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        overflow: hidden;
-      
-    }
-
-    .image-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .slider-controls {
-        display: flex;
-        justify-content: center;
-     
-        
-    }
-
-    .prev-btn{
-        left: 0;
-        top: 50%;
-        transform: translate(0%,-50%)
-    }
-    .next-btn{
-        right: 0;
-        top: 50%;
-        transform: translate(0%,-50%)
-    }
-    .prev-btn svg,
-    .next-btn svg{
-        width: 30px;
-        height: 30px;
-        stroke: white;
-    }
-    .prev-btn,
-    .next-btn {
-        
-      
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        background-color: #333;
-        color: white;
-        
-        margin: 0 10px;
-        cursor: pointer;
-        z-index: 1;
-       border-radius: 50%;
-        font-size: 16px;
-       transition: all 0.3s ease 0s;
-        
-    }
-
-    .prev-btn:hover,
-    .next-btn:hover {
-        background-color: #555;
-    }
-
-    .prev-btn:focus,
-    .next-btn:focus {
-    }
-
-    /* Dots navigation */
-    .dots-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 10px;
-        width: 100%;
-        gap: 5px;
-    }
-
-    .dot {
-        width: 100%;
-        height: 12px;
-     
-        background-color: #bbb;
-        
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .dot.active {
-        background-color: #333;
-    }
-
+   
     /* Fullscreen mode styles */
     .fullscreen-overlay {
         display: none;
@@ -259,7 +130,7 @@
 <body>
     <!-- Header -->
     <div class="wrapper">
-    <header class="header">
+    <header class="header ">
     <div class="header__container container">
         <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
         <nav class="header_middle">
@@ -341,7 +212,7 @@
 
                     <div class="about-box">
                         <div class="about-content">
-                            <p class="text about-text"><span>Торгово производственная компания KAAS</span>&#160;&#8212; ваш надежный партнер в&#160;создании качественной мебели
+                            <p class="title about-text"><span>Торгово производственная компания KAAS</span>&#160;&#8212; ваш надежный партнер в&#160;создании качественной мебели
                             </p>
                             <p class="text about-text">
                                 Торгово производственная компания <span class="highlight">KAAS</span> начала свою работу
@@ -352,26 +223,22 @@
                             </p>
                         </div>
 
-                        <div class="slider-container">
-                            <div class="slider" id="imageSlider">
-                                <!-- Slides will be added dynamically -->
-                                <div class="loading" id="sliderLoading"></div>
+                        <div class="swiper mySwiper mySwiper-about">
+                            <div class="swiper-wrapper">
+                                <a href="https://static.insales-cdn.com/images/products/1/1687/649725591/mori-grafit-3.jpg" class="swiper-slide" data-fancybox="gallery-kitchen" data-caption="Single image 1">
+                                    <img src="https://static.insales-cdn.com/images/products/1/1687/649725591/mori-grafit-3.jpg" alt="img">
+                                </a>
+                                <a href="https://pinskdrev.by/web/catalogfiles/catalog/offers/3-14.jpg" class="swiper-slide" data-fancybox="gallery-kitchen" data-caption="Single image 2">
+                                    <img src="https://pinskdrev.by/web/catalogfiles/catalog/offers/3-14.jpg" alt="img">
+                                </a>
+                                <a href="https://www.kuhni-nsk.ru/files/dizain2024/dizajn-pryamoj-kuhni-cvet-derevo-i-seryj-s-vitrinoj.jpg" class="swiper-slide" data-fancybox="gallery-kitchen" data-caption="Single image 3">
+                                    <img src="https://www.kuhni-nsk.ru/files/dizain2024/dizajn-pryamoj-kuhni-cvet-derevo-i-seryj-s-vitrinoj.jpg" alt="img">
+                                </a>
                             </div>
-
-                            <div class="dots-container" id="dotsContainer">
-                                <!-- Dots will be added dynamically -->
-                            </div>
-
-                            <div class="slider-controls">
-                                <button class="prev-btn" id="prevBtn" aria-label="Previous slide">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M6 12L11 7M6 12L11 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                </button>
-                                <button class="next-btn" id="nextBtn" aria-label="Next slide">
-                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M6 12H18M18 12L13 7M18 12L13 17" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
-                                </button>
-                            </div>
+                            <div class="swiper-button-next swiper-button-next-about"></div>
+                            <div class="swiper-button-prev swiper-button-prev-about"></div>
+                            <div class="swiper-pagination swiper-pagination-about"></div>
                         </div>
-
                         <div class="fullscreen-overlay" id="fullscreenOverlay">
                             <span class="close-fullscreen" id="closeFullscreen" aria-label="Close fullscreen view">&#215;</span>
                             <div class="fullscreen-nav">
@@ -790,7 +657,7 @@
                 </div>
             </section>
 
-            <section class="advantages_section">
+            <section class="advantages_section ">
                 <div class="container">
                     <h2 class="title title-advantages">Наши преимущества</h2>
 
@@ -826,45 +693,45 @@
                 </div>
             </section>
 
-            <section class="process_section">
+            <section class="process_section no-animation">
                 <div class="container">
                     <h2 class="title process-title">Процесс работы</h2>
 
                     <div class="process-steps">
-                        <div class="process-step step-first">
+                        <div class="process-step step-first steps-on-scroll">
                             <div class="step-number">1</div>
                             <h3>Консультация</h3>
                             <p>Обсуждение проекта и&#160;ваших пожеланий</p>
 
                         </div>
-                        <div class="process-step step-img">
+                        <div class="process-step step-img steps-on-scroll">
                             <img src="./img/kons.jpg" alt="img">
 
                         </div>
 
-                            <div class="process-step step-img">
+                            <div class="process-step step-img steps-on-scroll">
                             <img src="./img/chertez.jpg" alt="img">
                         </div>
-                            <div class="process-step step-img">
+                            <div class="process-step step-img steps-on-scroll">
                                 <img src="./img/производство.jpg" alt="img">
 
                                 </div>
 
-                            <div class="process-step step-img">
+                            <div class="process-step step-img steps-on-scroll">
                             <img src="https://praktikagroup.ru/upload/medialibrary/d76/d767ceaab8d44e5c8bdd940ff750a64f.jpg" alt="img">
 
                             </div>
-                        <div class="process-step step-second">
+                        <div class="process-step step-second steps-on-scroll">
                             <div class="step-number">2</div>
                             <h3>Проектирование</h3>
                             <p>Создание дизайн-проекта и&#160;расчет стоимости</p>
                         </div>
-                        <div class="process-step step-three">
+                        <div class="process-step step-three steps-on-scroll">
                             <div class="step-number">3</div>
                             <h3>Производство</h3>
                             <p>Изготовление мебели на&#160;собственном производстве</p>
                         </div>
-                        <div class="process-step step-four">
+                        <div class="process-step step-four steps-on-scroll">
                             <div class="step-number">4</div>
                             <h3>Монтаж</h3>
                             <p>Профессиональная установка и&#160;гарантийное обслуживание</p>
@@ -888,42 +755,41 @@
 
             </section>
 
-        <section class="services" id="dialog-content" style="display: none;">
-            <div class="container">
-                <div class="services__grid">
-                    <div class="services__card">
-                        <div class="servicesCard">
-                            <h3 class="serviceTopic">Оплата</h3>
-                            <div class="serviceTitle">
-                                <p class="serviceText">Мы&#160;принимаем наличные, безналичные, переводы от&#160;физических и
-                                    юридических
-                                    лиц. Рассрочка под 0% до
-                                    24 мес</p>
-                                <img src="./img/logo/payment.svg" alt="payment" class="paymentImg">
-                            </div>
-                        </div>
-                        <div class="servicesCard">
-                            <h3 class="serviceTopic">Доставка</h3>
-                            <div class="serviceTitle">
-                                <p class="serviceText">Товар доставляется упакованный с&#160;полным описанием сборки
-                                    продукции.
-                                    Доставка осуществляется по
-                                    всему Казахстану</p>
-                                <img src="./img/logo/delivery.svg" alt="delivery" class="deliveryImg">
-                            </div>
-                        </div>
+            <section class="services no-animation" id="dialog-content" style="display: none;">
+    <div class="container">
+        <div class="services__grid">
+            <div class="services__card">
+                <div class="servicesCard">
+                    <h3 class="serviceTopic">Оплата</h3>
+                    <div class="serviceTitle">
+                        <p class="serviceText">Мы&#160;принимаем наличные, безналичные, переводы от&#160;физических и
+                            юридических
+                            лиц. Рассрочка под 0% до
+                            24 мес</p>
+                        <img src="./img/logo/payment.svg" alt="payment" class="paymentImg">
                     </div>
-                    <div class="services__form">
-                        <h2>Оставьте заявку на&#160;подбор кухни для вас</h2>
-                        <form>
-                            <input type="text" placeholder="Ваше имя" class="input">
-                            <input type="tel" placeholder="Ваш телефон" class="input">
-                            <button class="hero__button">ОТПРАВИТЬ ЗАЯВКУ</button>
-                        </form>
+                </div>
+                <div class="servicesCard">
+                    <h3 class="serviceTopic">Доставка</h3>
+                    <div class="serviceTitle">
+                        <p class="serviceText">Товар доставляется упакованный с&#160;полным описанием сборки продукции.
+                            Доставка осуществляется по
+                            всему Казахстану</p>
+                        <img src="./img/logo/delivery.svg" alt="delivery" class="deliveryImg">
                     </div>
                 </div>
             </div>
-        </section>
+            <div class="services__form">
+                <h2>Оставьте заявку на&#160;подбор кухни для вас</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя" class="input">
+                    <input type="tel" placeholder="Ваш телефон" class="input">
+                    <button class="hero__button">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
 
         <div class="mobile-menu" id="mobile-menu">
             <div class="mobile-menu__container">
@@ -991,7 +857,7 @@
     </div>
 </footer> -->
 
-<footer class="footer">
+<footer class="footer ">
     <div class="footer_container container">
         <div class="footer_list">
             <div class="footer_item footer_item-logo">
@@ -1000,10 +866,10 @@
                     <a href="showrooms.html" class="adress">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                         Назарбаева 223</a>
-                    <a href="showrooms1.html" class="adress">
+                    <a href="showrooms.html" class="adress">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                         Бауыржана Момышулы, 5/4</a>
-                    <a href="showrooms2.html" class="adress">
+                    <a href="showrooms.html" class="adress">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
                         проспект Туран, 53В</a>
                 </div>
@@ -1056,13 +922,18 @@
         </div>
     </div>
 </footer>
+
 </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
-        <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
-        <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script>
-        <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script>
-        <script language="JavaScript" type="text/javascript" src="./js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/index.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <!-- <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script> -->
+    <!-- <script language="JavaScript" type="text/javascript" src="./js/main.js"></script> -->
         <script>
             function animateCounter(element, target, duration) {
                 let start = 0;
