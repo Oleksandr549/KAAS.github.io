@@ -282,17 +282,17 @@
             </div>
             <div class="footer_item">
                 <ul class="footer_nav-list">
-                    <li><a href="#" class="footer_nav-item">
+                    <li><a href="https://www.instagram.com/kaaskz/" target="_blank" class="footer_nav-item">
                                 Instagram</a>
                     </li>
-                    <li><a href="#" class="footer_nav-item">
+                    <li><a href="https://www.instagram.com/kaaskazakhstan/" target="_blank" class="footer_nav-item">
                                 Instagram</a>
                     </li>
-                    <li><a href="#" class="footer_nav-item">
+                    <li><a href="#" target="_blank" class="footer_nav-item">
                                 Youtube</a></li>
-                    <li><a href="#" class="footer_nav-item">
+                    <li><a href="https://api.whatsapp.com/" target="_blank" class="footer_nav-item">
                         WhatsApp</a></li>
-                    <li><a href="#" class="footer_nav-item">
+                    <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" target="_blank" class="footer_nav-item">
                         TikTok</a>
                     </li>
                 </ul>
@@ -332,12 +332,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const productData = JSON.parse(localStorage.getItem('selectedProduct'));
-    
+        
             if (!productData) {
                 console.error("Данные о продукте не найдены.");
                 return;
             }
-    
+        
             document.getElementById('product-title').textContent = productData.title;
             document.getElementById('product-description').textContent = productData.description;
             document.getElementById('product-price').textContent = productData.price + '₸';
@@ -349,39 +349,47 @@
             document.getElementById('product-features').textContent = productData.features;
             document.getElementById('product-color').textContent = productData.color;
             document.getElementById('product-link').setAttribute('href', productData.link);
-
-    
+        
             const sliderContainer = document.getElementById('product-slider');
             const thumbnailContainer = document.getElementById('product-thumbnails');
             const colors = Object.keys(productData.images);
-    
+        
             colors.forEach(color => {
                 const colorImages = productData.images[color];
-    
+        
                 colorImages.forEach((imgSrc, index) => {
-                    const slideElement = document.createElement('div');
+                    // Создаем <a> элемент и добавляем нужные атрибуты
+                    const slideElement = document.createElement('a');
                     slideElement.classList.add('swiper-slide');
                     slideElement.classList.add(`color-${color.toLowerCase()}`);
-    
+                    slideElement.href = imgSrc;
+                    slideElement.setAttribute('data-fancybox', `gallery-${color}`);
+                    slideElement.classList.add('fancybox');
+        
+                    // Создаем <img> элемент и добавляем его в <a>
                     const imgElement = document.createElement('img');
                     imgElement.src = imgSrc;
                     imgElement.alt = `${productData.title} - цвет ${color} - изображение ${index + 1}`;
-                    slideElement.appendChild(imgElement);
-    
+        
+                    slideElement.appendChild(imgElement);  // Добавляем <img> в <a>
+        
+                    // Добавляем <a> в контейнер слайдов
                     sliderContainer.appendChild(slideElement);
-    
+        
+                    // Создаем миниатюры для слайдов
                     const thumbSlide = document.createElement('div');
                     thumbSlide.classList.add('swiper-slide');
                     thumbSlide.classList.add(`color-${color.toLowerCase()}`);
-    
+        
                     const thumbImg = document.createElement('img');
                     thumbImg.src = imgSrc;
                     thumbImg.alt = `Мини-слайд для ${productData.title} - цвет ${color} - изображение ${index + 1}`;
                     thumbSlide.appendChild(thumbImg);
-    
+        
+                    // Добавляем миниатюры в контейнер мини-слайдов
                     thumbnailContainer.appendChild(thumbSlide);
                 });
-    
+        
                 const colorSelect = document.querySelector('.color-select');
                 const div = document.createElement('div');
                 const input = document.createElement('input');
@@ -390,79 +398,85 @@
                 input.type = 'radio';
                 input.value = color.toLowerCase();
                 if (color.toLowerCase() === 'white') input.checked = true;
-    
+        
                 const label = document.createElement('label');
                 label.setAttribute('for', input.id);
                 label.style.backgroundColor = color.toLowerCase();
-    
+        
                 div.appendChild(input);
                 div.appendChild(label);
                 colorSelect.appendChild(div);
-    
+        
                 input.addEventListener('change', function () {
                     updateSliderForColor(color.toLowerCase());
                     updateThumbnailsForColor(color.toLowerCase());
                 });
             });
-    
+        
             function updateSliderForColor(color) {
                 sliderContainer.innerHTML = '';
-    
+        
                 const colorImages = productData.images[color];
                 colorImages.forEach((imgSrc, index) => {
-                    const slideElement = document.createElement('div');
+                    // Создаем <a> элемент и добавляем нужные атрибуты
+                    const slideElement = document.createElement('a');
                     slideElement.classList.add('swiper-slide');
                     slideElement.classList.add(`color-${color.toLowerCase()}`);
-    
+                    slideElement.href = imgSrc;
+                    slideElement.setAttribute('data-fancybox', `gallery-${color}`);
+                    slideElement.classList.add('fancybox');
+        
+                    // Создаем <img> элемент и добавляем его в <a>
                     const imgElement = document.createElement('img');
                     imgElement.src = imgSrc;
                     imgElement.alt = `${productData.title} - цвет ${color} - изображение ${index + 1}`;
-                    slideElement.appendChild(imgElement);
-    
+        
+                    slideElement.appendChild(imgElement);  // Добавляем <img> в <a>
+        
+                    // Добавляем <a> в контейнер слайдов
                     sliderContainer.appendChild(slideElement);
                 });
-    
+        
                 initSwiper();
             }
-    
+        
             function updateThumbnailsForColor(color) {
                 thumbnailContainer.innerHTML = '';
-    
+        
                 const colorImages = productData.images[color];
                 colorImages.forEach((imgSrc, index) => {
                     const thumbSlide = document.createElement('div');
                     thumbSlide.classList.add('swiper-slide');
                     thumbSlide.classList.add(`color-${color.toLowerCase()}`);
-    
+        
                     const thumbImg = document.createElement('img');
                     thumbImg.src = imgSrc;
                     thumbImg.alt = `Мини-слайд для ${productData.title} - цвет ${color} - изображение ${index + 1}`;
                     thumbSlide.appendChild(thumbImg);
-    
+        
                     thumbnailContainer.appendChild(thumbSlide);
                 });
-    
+        
                 initSwiper();
             }
-    
+        
             function initSwiper() {
                 if (window.swiper) {
                     window.swiper.destroy();
                 }
-    
+        
                 if (window.swiper2) {
                     window.swiper2.destroy();
                 }
-    
+        
                 window.swiper = new Swiper(".mySwiper-product-page", {
                     spaceBetween: 10,
                     slidesPerView: 4,
                     freeMode: true,
                     watchSlidesProgress: true,
                     direction: "vertical",
-                    
                 });
-    
+        
                 window.swiper2 = new Swiper(".mySwiper-product-page2", {
                     spaceBetween: 0,
                     navigation: {
@@ -474,11 +488,18 @@
                     },
                 });
             }
-    
+        
             const defaultColor = 'white';
             updateSliderForColor(defaultColor);
             updateThumbnailsForColor(defaultColor);
+        
+            // Инициализация Fancybox
+            Fancybox.bind('[data-fancybox]', {
+                // Настройки (если нужны)
+            });
         });
+        
+        
     </script>
 
 </body>
