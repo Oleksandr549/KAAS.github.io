@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="./img/logo/favicon.ico">
+
+    <!-- <script src="https://kit.fontawesome.com/5950d23ec9.js" crossorigin="anonymous"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link href="https://fonts.googleapis.com/css?family=Inter+Tight:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <title>KAAS Kitchens</title>
+</head>
+
+<body>
+    <!-- Header -->
+
+    <header class="header ">
+    <div class="header__container container">
+        <a href="index.html"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="header__logo"></a>
+        <nav class="header_middle">
+            <ul class="mainNav">
+                <li><a href="closet.html" class="nav-item">
+                    <!-- <img src="./img/logo/cabinet.png" alt="cabinet.png" -->
+                            <!-- class="navImg"> -->
+                            Шкафы</a>
+                </li>
+                <li><a href="kitchen.html" class="nav-item">
+                    <!-- <img src="./img/logo/kitchen.png" alt="kitchen.png" -->
+                            <!-- class="navImg"> -->
+                            Кухни</a></li>
+                <li><a href="showrooms.html" class="nav-item">
+                    <!-- <img src="./img/logo/location.png" alt="location.png" -->
+                            <!-- class="navImg"> -->
+                            Шоурумы</a></li>
+                <!-- перетащить шоурумы и контакты в один раздел, добавить раздел "О Нас" -->
+                <li><a href="about.html" class="nav-item">
+                    <!-- <img src="./img/logo/about.svg" alt="about.svg" class="navImg"> -->
+                    О&#160;нас</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__right">
+            <div class="header__contact">
+                <a href="tel:+77058323200" class="header__phone"><p>+</p> 7 (705) 832-32-00</a>
+                <span class="header__subtitle">Бесплатная консультация</span>
+            </div>
+            <!-- <a data-fancybox data-src="#dialog-content" class="header__button">ЗАКАЗАТЬ ЗВОНОК</a> -->
+
+            <button data-fancybox data-src="#dialog-content" class="custom-btn "><span>Указать Данные</span><span>Заказать рассчет</span></button>
+        </div>
+        <!-- Улучшенная кнопка бургер-меню -->
+        <button class="header__burger" id="burger-btn" aria-label="Меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <button class="mobile-menu__close" id="mobile-menu-close" aria-label="Закрыть меню">
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+</header>
+
+<div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu__container">
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="closet.html"><img src="./img/logo/cabinet.png" alt="cabinet.png" class="mobile-nav-img">Шкафы</a></li>
+                <li><a href="kitchen.html"><img src="./img/logo/kitchen.png" alt="kitchen.png" class="mobile-nav-img">Кухни</a></li>
+                <li><a href="showrooms.html"><img src="./img/logo/location.png" alt="location.png" class="mobile-nav-img">Шоурумы</a></li>
+                <li><a href="about.html"><img src="./img/logo/about.svg" alt="about.svg" class="mobile-nav-img">О&#160;нас</a></li>
+            </ul>
+        </nav>
+        <div class="mobile-contact">
+            <a href="tel:+77058323200" class="mobile-phone">+7&#160;(705-83)&#160;2-32-00</a>
+            <span class="mobile-subtitle">Бесплатная консультация</span>
+            <a data-fancybox data-src="#dialog-content" class="mobile-button">ЗАКАЗАТЬ РАССЧЕТ</a>
+        </div>
+        <div class="mobile-social">
+            <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg" alt="WhatsApp"></a>
+            <a href="https://www.instagram.com/kaaskz/" class="mobile-social-link"><img
+                    src="./img/logo/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.instagram.com/kaaskazakhstan/" class="mobile-social-link"><img
+                    src="./img/logo/instagram.svg" alt="Instagram"></a>
+            <a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" class="mobile-social-link"><img
+                    src="./img/logo/tiktok.svg" alt="TikTok"></a>
+        </div>
+    </div>
+</div>
+    <div class="wrapper">
+    <!-- Улучшенное мобильное меню -->
+    <main class="main">
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="mobile-menu__container">
+                <nav class="mobile-nav">
+                    <ul>
+                        <li><a href="closet.html"><img src="./img/logo/cabinet.png" alt="cabinet.png" class="mobile-nav-img">Шкафы</a></li>
+                        <li><a href="kitchen.html"><img src="./img/logo/kitchen.png" alt="kitchen.png" class="mobile-nav-img">Кухни</a></li>
+                        <li><a href="showrooms.html"><img src="./img/logo/location.png" alt="location.png" class="mobile-nav-img">Шоурумы</a></li>
+                        <li><a href="about.html"><img src="./img/logo/about.svg" alt="about.svg" class="mobile-nav-img">О&#160;нас</a></li>
+                    </ul>
+                </nav>
+                <div class="mobile-contact">
+                    <a href="tel:+77058323200" class="mobile-phone">+7&#160;(705-83)&#160;2-32-00</a>
+                    <span class="mobile-subtitle">Бесплатная консультация</span>
+                    <a data-fancybox data-src="#dialog-content" class="mobile-button">ЗАКАЗАТЬ РАССЧЕТ</a>
+                </div>
+                <div class="mobile-social">
+                    <a href="https://wa.me/" class="mobile-social-link"><img src="./img/logo/whatsapp.svg" alt="WhatsApp"></a>
+                    <a href="https://www.instagram.com/kaaskz/" class="mobile-social-link"><img
+                            src="./img/logo/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.instagram.com/kaaskazakhstan/" class="mobile-social-link"><img
+                            src="./img/logo/instagram.svg" alt="Instagram"></a>
+                    <a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" class="mobile-social-link"><img
+                            src="./img/logo/tiktok.svg" alt="TikTok"></a>
+                </div>
+            </div>
+        </div>
+        <div class="product-container">
+
+            <!-- <div class="product-image-container">
+                <img id="product-image" src="./img/Odno/KS-18/KS-18-2.jpg" alt="Изображение товара">
+            </div> -->
+
+        </div>
+        <section class="product-page_section ">
+            <div class="product-page_container container">
+                <div class="product-page_box">
+                    <!-- Основной слайдер -->
+                    <div class="swiper-model">
+                        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper-product-page2">
+                            <div class="swiper-wrapper" id="product-slider">
+                                <!-- Слайды будут динамически добавляться сюда -->
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                        <div thumbsSlider="" class="swiper mySwiper-product-page">
+                            <div class="swiper-wrapper" id="product-thumbnails">
+                                <!-- Мини-слайды будут динамически добавляться сюда -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Мини-слайдер для предпросмотра -->
+
+                    <!-- Детали товара -->
+                    <div class="product-details">
+                        <h1 id="product-title"></h1>
+                        <p id="product-description"></p>
+
+                        <p class="product-price"> <span id="product-price"></span> <span id="product-old-price"></span></p>
+
+                        <h3 class="specs-title">Характеристики:</h3>
+                        <div class="specs-list">
+                            <p class="product-detail product-color" > Цвета: <span id="product-color"></span></p>
+                            <div class="color-select">
+                                <!-- Цвета будут динамически отображаться здесь -->
+                            </div>
+                            <p class="product-detail"> Размеры (ШхВхГ): <span id="product-dimensions"></span></p>
+                            <p class="product-detail"> <svg viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <style type="text/css"> .st0{fill:#3B4652;} .st1{fill:#2B79C2;} </style> <g> <path class="st0" d="M114.9,201.8h291.7c3,0,5.5-2.5,5.5-5.5v-78c0-3-2.5-5.5-5.5-5.5h-32.4v58.5H133.4v-58.5h-18.5 c-12.3,0-23.4,5-31.5,13c-8,8-13,19.2-13,31.4C70.4,181.8,90.3,201.8,114.9,201.8z"></path> <path class="st1" d="M418.7,289.1H273.3c-17.7,0-32,14.3-32,32c0,17.7,14.3,32,32,32h146.3c4.6,0,8.8-1.4,12.3-3.8 c1.2-0.8,2.3-1.7,3.3-2.7c4-4,6.4-9.5,6.4-15.5v-64.9C441.6,278.8,431.3,289.1,418.7,289.1z"></path> <path class="st0" d="M227.3,321.1c0-25.4,20.6-46,46-46h137.1c1.1-2.7,1.8-5.7,1.8-8.9V215c-1.7,0.5-3.6,0.8-5.5,0.8H114.9 c-17.8,0-33.8-8-44.5-20.6V410c0,24.5,19.9,44.5,44.5,44.5h291.7c3,0,5.5-2.5,5.5-5.5v-81.9H273.3 C247.9,367.1,227.3,346.5,227.3,321.1z"></path> <path class="st0" d="M426.1,159.4v106.8c8.2-1,15.5-12.7,15.5-20.2v-63.1C441.6,172.3,435.2,163.3,426.1,159.4z"></path> <path class="st0" d="M426.1,449c0,1.2-0.1,2.4-0.3,3.5c9.3-3.8,15.8-13,15.8-23.6v-69.3c-4.5,3.4-9.7,5.9-15.5,6.9V449z"></path> <path class="st1" d="M179.4,116.6c4.5,0,8.8-1.4,12.2-3.8c3.6-2.5,6.4-6,8-10.1c0.9-2.4,1.4-5,1.4-7.8h53.2c0,7.4,3.7,14,9.4,17.9 c3.5,2.4,7.7,3.8,12.2,3.8v40.7h32V57.5H147.4v99.8h32V116.6z"></path> <rect class="st0" height="99.8" width="38.3" x="322" y="57.5"></rect> <path class="st0" d="M243.1,108.9h-30.8c-2.7,6.3-7.1,11.6-12.7,15.5c-1.9,1.3-4,2.5-6.1,3.4v29.5H262v-29.5 c-2.2-0.9-4.2-2.1-6.2-3.4C250.1,120.5,245.8,115.1,243.1,108.9z"></path> </g> </g></svg> <span id="product-shelves"></span></p>
+                            <p class="product-detail"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <g clip-path="url(#clip0_429_11020)"> <path d="M5.60608 5.74025L12 3L18.3939 5.74025C18.7616 5.89783 19 6.25937 19 6.6594V13.5181C19 15.6712 17.8463 17.6593 15.9768 18.7275L12 21L8.02317 18.7275C6.15372 17.6593 5 15.6712 5 13.5181V6.6594C5 6.25937 5.2384 5.89783 5.60608 5.74025Z" stroke="#535eee" stroke-width="2.5" stroke-linejoin="round"></path> <path d="M15 10L11 14L9 12" stroke="#535eee" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path> </g> <defs> <clipPath id="clip0_429_11020"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg> <span id="product-boxes"></span></p>
+                            <p class="product-detail"> <svg viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <style type="text/css"> .st0{fill:#3B4652;} .st1{fill:#2B79C2;} </style> <g> <path class="st0" d="M435.6,140.5c-2.9-2.6-7.3-2.3-9.9,0.5c-2.6,2.9-2.3,7.3,0.5,9.9c10.7,9.6,16.5,22.8,16.5,37.2 c0,12.4-4.6,24.4-13,33.6c-2.6,2.9-2.4,7.3,0.5,9.9c1.3,1.2,3,1.8,4.7,1.8c1.9,0,3.8-0.8,5.2-2.3c10.7-11.8,16.6-27.1,16.6-43 C456.8,169.7,449.2,152.7,435.6,140.5z"></path> <path class="st0" d="M327.6,34.4c2.7-0.4,5.5-0.7,8.2-0.7c24.3,0,45.5,18.1,49.5,42.1c0.6,3.4,3.5,5.9,6.9,5.9c0.4,0,0.8,0,1.1-0.1 c3.8-0.6,6.4-4.2,5.8-8c-5-30.7-32.2-53.8-63.3-53.8c-3.5,0-7,0.3-10.5,0.9c-3.8,0.6-6.4,4.2-5.8,8C320.2,32.5,323.8,35,327.6,34.4 z"></path> <path class="st0" d="M107.9,96c0.1,0,0.3,0,0.4,0c3.7,0,6.8-2.9,7-6.6c1.6-26.4,23.6-47.1,50-47.1c1,0,2.1,0,3.2,0.1 c3.9,0.2,7.2-2.7,7.4-6.5c0.2-3.9-2.7-7.2-6.5-7.4c-1.3-0.1-2.7-0.1-4-0.1c-33.9,0-62,26.5-64,60.3C101.1,92.5,104.1,95.8,107.9,96 z"></path> <path class="st0" d="M85.8,239.2c-10.7-9.6-16.5-22.8-16.5-37.2c0-12.4,4.6-24.4,13-33.6c2.6-2.9,2.4-7.3-0.5-9.9 c-2.9-2.6-7.3-2.4-9.9,0.5c-10.7,11.8-16.6,27.1-16.6,43c0,18.5,7.5,35.4,21.2,47.7c1.3,1.2,3,1.8,4.7,1.8c1.9,0,3.8-0.8,5.2-2.3 C88.9,246.2,88.6,241.8,85.8,239.2z"></path> <path class="st0" d="M293.1,351.9c9.5,0,18.8-5.4,23-14.9c4.6-10.3,15.5-16.2,26.7-14.6c8.5,1.3,16.5-1.8,21.9-7.5 c4.3-4.5,7-10.6,7-17.4c0-0.2,0-0.4,0-0.7c0-0.2,0-0.4,0-0.6c0-11,7.2-20.8,17.8-24.1c11-3.4,17.8-13.5,17.8-24.1 c0-3.9-0.9-7.8-2.8-11.5c-1.9-3.7-2.8-7.6-2.8-11.5c0-6.8,2.8-13.6,8-18.5c5.4-5,8-11.7,8-18.5c0-7.6-3.4-15.1-10-20.1 c-6.4-4.9-10-12.4-10-20.1c0-3.1,0.6-6.2,1.7-9.2c1.2-3,1.7-6.1,1.7-9.2c0-11.6-8.1-22.3-20.2-24.7c-5.5-1.1-10.3-4-13.9-8 c-3.6-4-5.8-9.2-6.3-14.8c-1-13.5-12.3-23.3-25.1-23.3c-2.1,0-4.2,0.3-6.3,0.8c-2.1,0.5-4.2,0.8-6.2,0.8c-8.8,0-17.2-4.7-21.8-12.6 c-4.7-8.2-13.2-12.6-21.9-12.6c-5.7,0-11.4,1.9-16.2,5.9c-4.7,3.9-10.4,5.9-16.2,5.9c-4.9,0-9.9-1.4-14.2-4.4 c-4.4-3-9.3-4.4-14.1-4.4c-9.5,0-18.8,5.4-23,14.9c-4.1,9.1-13.2,14.9-23,14.9c-1.2,0-2.5-0.1-3.7-0.3 c-15.3-2.3-28.9,9.6-28.9,24.9c0,0.2,0,0.4,0,0.7c0,0.2,0,0.4,0,0.6c0,11-7.2,20.8-17.8,24.1c-11,3.4-17.8,13.5-17.8,24.1 c0,3.9,0.9,7.8,2.8,11.5c1.9,3.6,2.8,7.6,2.8,11.5c0,6.8-2.8,13.6-8,18.5c-5.4,5-8,11.7-8,18.5c0,7.6,3.4,15.1,10,20.1 c6.4,4.9,10,12.4,10,20.1c0,3.1-0.6,6.2-1.7,9.2c-1.2,3-1.7,6.1-1.7,9.2c0,11.6,8.1,22.3,20.2,24.7c5.5,1.1,10.3,4,13.9,8 c3.3,3.7,5.4,8.3,6.1,13.4c0.1,0.5,0.1,0.9,0.1,1.4c1,13.5,12.3,23.3,25.1,23.3c2.1,0,4.2-0.3,6.3-0.8c2.1-0.5,4.2-0.8,6.2-0.8 c8.8,0,17.2,4.7,21.8,12.6c4.7,8.2,13.2,12.6,21.9,12.6c4.1,0,8.2-1,12-3.1c1.4-0.8,2.8-1.7,4.2-2.8c4.4-3.6,9.7-5.6,15.1-5.9 c0.4,0,0.8,0,1.1,0c4.9,0,9.9,1.4,14.2,4.4C283.3,350.5,288.3,351.9,293.1,351.9z M256,306.1c-61.3,0-111-49.7-111-111 c0-61.3,49.7-111,111-111s111,49.7,111,111C367,256.4,317.3,306.1,256,306.1z"></path> <path class="st1" d="M314.6,172.5l-29.6-3.6c-3.3-0.4-6.2-2.5-7.6-5.5l-12.6-27.1c-3.5-7.5-14.1-7.5-17.5,0l-12.6,27.1 c-1.4,3-4.3,5.1-7.6,5.5l-29.6,3.6c-8.2,1-11.4,11.1-5.4,16.7l21.9,20.3c2.4,2.3,3.5,5.7,2.9,8.9l-5.7,29.3 c-1.6,8.1,7,14.3,14.2,10.3l26.1-14.5c2.9-1.6,6.5-1.6,9.4,0l26.1,14.5c7.2,4,15.8-2.2,14.2-10.3l-5.7-29.3 c-0.6-3.3,0.5-6.7,2.9-8.9l21.9-20.3C326,183.6,322.7,173.5,314.6,172.5z"></path> <path class="st1" d="M198.4,349.4c-2-3.5-5.7-5.6-9.7-5.6c-0.9,0-1.8,0.1-2.8,0.4c-3.1,0.8-6.4,1.2-9.7,1.2 c-14.3,0-27-7.9-33.9-19.6L86.5,449.6l68.9-26.5l25.7,69.2l55.8-123.5c-1.5,0.2-2.9,0.3-4.4,0.3C218.4,369,205.4,361.5,198.4,349.4 z"></path> <path class="st1" d="M346.6,336.7c-1.9,0-3.9-0.2-5.8-0.4c-0.6-0.1-1.1-0.1-1.7-0.1c-4.4,0-8.4,2.6-10.2,6.6 c-6.3,14-20.4,23.1-35.8,23.1c-7.9,0-15.5-2.3-22-6.8c-0.1-0.1-0.3-0.2-0.4-0.2l60.2,133.4l25.7-69.2l68.9,26.5l-54.7-121.2 C364,333.7,355.4,336.7,346.6,336.7z"></path> </g> </g></svg><span id="product-material"></span></p>
+                            <p class="product-detail"><svg viewBox="0 0 512 512" id="Layer_1" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <style type="text/css"> .st0{fill:#3B4652;} .st1{fill:#2B79C2;} </style> <g> <circle class="st0" cx="229.7" cy="111.9" r="72.4"></circle> <polygon class="st1" points="238.5,359.9 279.2,338.8 279.2,251.3 279.2,241.8 279.2,218.3 264.3,218.3 264.3,263.2 195.1,263.2 195.1,218.3 153.2,218.3 152.5,219.8 152.5,472.5 208.5,472.5 208.5,423.2 238.5,423.2 "></polygon> <path class="st0" d="M45.2,287.5l-18.4,37.1l82.4,38.5c9.1,4.2,19.9,0.4,24.2-8.6l5-10.3v-95.3L106.5,315L45.2,287.5z"></path> <polygon class="st0" points="414.5,227.8 414.5,192.9 293.2,192.9 293.2,227.8 368.8,227.8 368.8,255.7 353.8,253.2 306.9,260.9 293.2,263.2 293.2,347.3 252.5,368.4 252.5,423.2 455.2,423.2 455.2,368.4 414.5,347.3 414.5,263.2 398.7,260.6 398.7,227.8 "></polygon> <polygon class="st0" points="469.2,437.2 252.5,437.2 222.5,437.2 222.5,472.5 485.2,472.5 485.2,437.2 "></polygon> </g> </g></svg> <span id="product-features"></span></p>
+                        </div>
+
+                        <div class="btn-box">
+                            <button class="order-button" id="modal-order-button">Сделать ЗАКАЗАТЬ</button>
+                        <a id="product-link" href="#" target="_blank">Купить на&#160;Kaspi</a>
+                        </div>
+                    </div>
+                </div>
+                <h3 class="specs-title-k">Состав кухни:</h3>
+                                <div class="specs-list">
+                                <table class="kitchen-specs">
+                                    <thead>
+                                    <tr>
+                                        <th>Наименование</th>
+                                        <th>Размеры (ШхВхГ)</th>
+                                        <th>Цвет / Материал</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody id="kitchen-specs-table-body">
+                                    <!-- Данные будут добавлены из скрипта -->
+                                    </tbody>
+                                </table>
+                                </div>
+            </div>
+        </section>
+
+        <section class="services no-animation" id="dialog-content" style="display: none;">
+    <div class="container">
+        <div class="services__grid">
+            <div class="services__card">
+                <div class="servicesCard">
+                    <h3 class="serviceTopic">Оплата</h3>
+                    <div class="serviceTitle">
+                        <p class="serviceText">Мы&#160;принимаем наличные, безналичные, переводы от&#160;физических и
+                            юридических
+                            лиц. Рассрочка под 0% до
+                            24 мес</p>
+                        <img src="./img/logo/payment.svg" alt="payment" class="paymentImg">
+                    </div>
+                </div>
+                <div class="servicesCard">
+                    <h3 class="serviceTopic">Доставка</h3>
+                    <div class="serviceTitle">
+                        <p class="serviceText">Товар доставляется упакованный с&#160;полным описанием сборки продукции.
+                            Доставка осуществляется по
+                            всему Казахстану</p>
+                        <img src="./img/logo/delivery.svg" alt="delivery" class="deliveryImg">
+                    </div>
+                </div>
+            </div>
+            <div class="services__form">
+                <h2>Оставьте заявку на&#160;подбор кухни для вас</h2>
+                <form>
+                    <input type="text" placeholder="Ваше имя" class="input">
+                    <input type="tel" placeholder="Ваш телефон" class="input">
+                    <button class="hero__button">ОТПРАВИТЬ ЗАЯВКУ</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    <!-- Footer -->
+    <!-- <footer class="footer">
+    <div class="container">
+        <div class="footer__grid">
+           
+            <nav class="header_middle">
+                <ul class="mainNav">
+                    <li><a href="https://wa.me/" class="footerNavLink">
+                        <img src="./img/logo/whatsapp.svg"
+                                alt="whatsapp.svg" class="footNavImg">WhatsApp</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/kaaskz/"
+                            class="footerNavLink">
+                            <img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                class="footNavImg">KAASМебель на заказ</a></li>
+                    <li><a href="https://www.instagram.com/kaaskazakhstan/"
+                            class="footerNavLink">
+                            <img src="./img/logo/instagram.svg" alt="instagram.svg"
+                                class="footNavImg">KAASГотовая мебель</a></li>
+                    <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS"
+                            class="footerNavLink">
+                            <img src="./img/logo/tiktok.svg" alt="tiktok.svg"
+                                class="footNavImg">TikTok</a></li>
+                    <li><a href="mailto: Info@kaas.kz" class="footerNavLink"><img src="./img/logo/gmail.svg"
+                                alt="gmail.png" class="footNavImg">Почта</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer__bottom">
+            <p>KAAS Kitchens 2025</p>
+        </div>
+    </div>
+</footer> -->
+
+<footer class="footer ">
+    <div class="footer_container container">
+        <div class="footer_list">
+            <div class="footer_item footer_item-logo">
+                <a href="#"><img src="./img/logo/2025-02-08 15.05.54.jpg" alt="KAAS Kitchens" class="footer_logo"> KAAS Kitchens</a>
+                <div class="footer_map" >
+                    <a href="showrooms.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Назарбаева 223</a>
+                    <a href="showrooms.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        Бауыржана Момышулы, 5/4</a>
+                    <a href="showrooms.html" class="adress">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path d="M12 21C15.5 17.4 19 14.1764 19 10.2C19 6.22355 15.866 3 12 3C8.13401 3 5 6.22355 5 10.2C5 14.1764 8.5 17.4 12 21Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>
+                        проспект Туран, 53В</a>
+                </div>
+            </div>
+            <div class="footer_item">
+                <ul class="footer_nav-list">
+                    <li><a href="closet.html" class="footer_nav-item">
+                                Шкафы</a>
+                    </li>
+                    <li><a href="kitchen.html" class="footer_nav-item">
+                                Кухни</a></li>
+                    <li><a href="showrooms.html" class="footer_nav-item">
+                                Шоурумы</a></li>
+                    <li><a href="about.html" class="footer_nav-item">
+                        О&#160;нас</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer_item">
+                <ul class="footer_nav-list">
+                    <li><a href="https://www.instagram.com/kaaskz/" target="_blank" class="footer_nav-item">
+                                Instagram</a>
+                    </li>
+                    <li><a href="https://www.instagram.com/kaaskazakhstan/" target="_blank" class="footer_nav-item">
+                                Instagram</a>
+                    </li>
+                    <li><a href="#" target="_blank" class="footer_nav-item">
+                                Youtube</a></li>
+                    <li><a href="https://api.whatsapp.com/" target="_blank" class="footer_nav-item">
+                        WhatsApp</a></li>
+                    <li><a href="https://www.tiktok.com/@kaaskazakhstan?_t=ZM-8tzbalOEmZS" target="_blank" class="footer_nav-item">
+                        TikTok</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="footer_item item-contact">
+
+                    <div class="footer__contact">
+                        <a href="tel:+77058323200" class="footer__phone"><p>+</p> 7 (705) 832-32-00</a>
+
+                        <span class="footer__subtitle">Бесплатная консультация</span>
+                    </div>
+                    <button data-fancybox data-src="#dialog-content" class="custom-btn "><span>Указать Данные</span><span>Заказать рассчет</span></button>
+
+            </div>
+        </div>
+        <div class="footer_bottom">
+          <div><p> &#169; KAAS Kitchens 2025</p></div>
+          <div>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Term of&#160;use</a>
+        </div>
+        </div>
+    </div>
+</footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./js/index.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+        <!-- <script type="text/javascript" src="./js/jquery-migrate-1.2.1.min.js"></script> -->
+    <!-- <script type="text/javascript" src="slick-1.8.1/slick/slick.min.js"></script> -->
+    <!-- <script language="JavaScript" type="text/javascript" src="./js/main.js"></script> -->
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const productData = JSON.parse(localStorage.getItem('selectedProduct'));
+        
+            if (!productData) {
+                console.error("Данные о продукте не найдены.");
+                return;
+            }
+        
+            document.getElementById('product-title').textContent = productData.title;
+            document.getElementById('product-description').textContent = productData.description;
+            document.getElementById('product-price').textContent = productData.price + '₸';
+            document.getElementById('product-old-price').textContent = productData.oldPrice + '₸';
+            document.getElementById('product-dimensions').textContent = `${productData.width} x ${productData.height} x ${productData.depth} см`;
+            document.getElementById('product-shelves').textContent = productData.shelves;
+            document.getElementById('product-boxes').textContent = productData.boxes;
+            document.getElementById('product-material').textContent = productData.material;
+            document.getElementById('product-features').textContent = productData.features;
+            document.getElementById('product-color').textContent = productData.color;
+            document.getElementById('product-link').setAttribute('href', productData.link);
+        
+            const kitchenSpecsBody = document.getElementById('kitchen-specs-table-body');
+
+            productData.kitchenModules.forEach(module => {
+                const row = document.createElement('tr');
+              
+                const nameCell = document.createElement('td');
+                nameCell.textContent = module.name;
+              
+                const sizeCell = document.createElement('td');
+                sizeCell.textContent = module.size ? module.size : '—';
+              
+                const materialCell = document.createElement('td');
+                materialCell.textContent = module.material;
+              
+                row.appendChild(nameCell);
+                row.appendChild(sizeCell);
+                row.appendChild(materialCell);
+              
+                kitchenSpecsBody.appendChild(row);
+              });
+
+            const sliderContainer = document.getElementById('product-slider');
+            const thumbnailContainer = document.getElementById('product-thumbnails');
+            const colors = Object.keys(productData.images);
+        
+            colors.forEach(color => {
+                const colorImages = productData.images[color];
+        
+                colorImages.forEach((imgSrc, index) => {
+                    // Создаем <a> элемент и добавляем нужные атрибуты
+                    const slideElement = document.createElement('a');
+                    slideElement.classList.add('swiper-slide');
+                    slideElement.classList.add(`color-${color.toLowerCase()}`);
+                    slideElement.href = imgSrc;
+                    slideElement.setAttribute('data-fancybox', `gallery-${color}`);
+                    slideElement.classList.add('fancybox');
+        
+                    // Создаем <img> элемент и добавляем его в <a>
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+                    imgElement.alt = `${productData.title} - цвет ${color} - изображение ${index + 1}`;
+        
+                    slideElement.appendChild(imgElement);  // Добавляем <img> в <a>
+        
+                    // Добавляем <a> в контейнер слайдов
+                    sliderContainer.appendChild(slideElement);
+        
+                    // Создаем миниатюры для слайдов
+                    const thumbSlide = document.createElement('div');
+                    thumbSlide.classList.add('swiper-slide');
+                    thumbSlide.classList.add(`color-${color.toLowerCase()}`);
+        
+                    const thumbImg = document.createElement('img');
+                    thumbImg.src = imgSrc;
+                    thumbImg.alt = `Мини-слайд для ${productData.title} - цвет ${color} - изображение ${index + 1}`;
+                    thumbSlide.appendChild(thumbImg);
+        
+                    // Добавляем миниатюры в контейнер мини-слайдов
+                    thumbnailContainer.appendChild(thumbSlide);
+                });
+        
+                const colorSelect = document.querySelector('.color-select');
+                const div = document.createElement('div');
+                const input = document.createElement('input');
+                input.id = `color-${color.toLowerCase()}`;
+                input.name = 'choice';
+                input.type = 'radio';
+                input.value = color.toLowerCase();
+                if (color.toLowerCase() === 'white') input.checked = true;
+        
+                const label = document.createElement('label');
+                label.setAttribute('for', input.id);
+                label.style.backgroundColor = color.toLowerCase();
+        
+                div.appendChild(input);
+                div.appendChild(label);
+                colorSelect.appendChild(div);
+        
+                input.addEventListener('change', function () {
+                    updateSliderForColor(color.toLowerCase());
+                    updateThumbnailsForColor(color.toLowerCase());
+                });
+            });
+        
+            function updateSliderForColor(color) {
+                sliderContainer.innerHTML = '';
+        
+                const colorImages = productData.images[color];
+                colorImages.forEach((imgSrc, index) => {
+                    // Создаем <a> элемент и добавляем нужные атрибуты
+                    const slideElement = document.createElement('a');
+                    slideElement.classList.add('swiper-slide');
+                    slideElement.classList.add(`color-${color.toLowerCase()}`);
+                    slideElement.href = imgSrc;
+                    slideElement.setAttribute('data-fancybox', `gallery-${color}`);
+                    slideElement.classList.add('fancybox');
+        
+                    // Создаем <img> элемент и добавляем его в <a>
+                    const imgElement = document.createElement('img');
+                    imgElement.src = imgSrc;
+                    imgElement.alt = `${productData.title} - цвет ${color} - изображение ${index + 1}`;
+        
+                    slideElement.appendChild(imgElement);  // Добавляем <img> в <a>
+        
+                    // Добавляем <a> в контейнер слайдов
+                    sliderContainer.appendChild(slideElement);
+                });
+        
+                initSwiper();
+            }
+        
+            function updateThumbnailsForColor(color) {
+                thumbnailContainer.innerHTML = '';
+        
+                const colorImages = productData.images[color];
+                colorImages.forEach((imgSrc, index) => {
+                    const thumbSlide = document.createElement('div');
+                    thumbSlide.classList.add('swiper-slide');
+                    thumbSlide.classList.add(`color-${color.toLowerCase()}`);
+        
+                    const thumbImg = document.createElement('img');
+                    thumbImg.src = imgSrc;
+                    thumbImg.alt = `Мини-слайд для ${productData.title} - цвет ${color} - изображение ${index + 1}`;
+                    thumbSlide.appendChild(thumbImg);
+        
+                    thumbnailContainer.appendChild(thumbSlide);
+                });
+        
+                initSwiper();
+            }
+        
+            function initSwiper() {
+                if (window.swiper) {
+                    window.swiper.destroy();
+                }
+        
+                if (window.swiper2) {
+                    window.swiper2.destroy();
+                }
+        
+                window.swiper = new Swiper(".mySwiper-product-page", {
+                    spaceBetween: 10,
+                    slidesPerView: 4,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    direction: "vertical",
+                });
+        
+                window.swiper2 = new Swiper(".mySwiper-product-page2", {
+                    spaceBetween: 0,
+                    navigation: {
+                        nextEl: ".swiper-button-next",
+                        prevEl: ".swiper-button-prev",
+                    },
+                    thumbs: {
+                        swiper: window.swiper,
+                    },
+                });
+            }
+        
+            const defaultColor = 'white';
+            updateSliderForColor(defaultColor);
+            updateThumbnailsForColor(defaultColor);
+        
+            // Инициализация Fancybox
+            Fancybox.bind('[data-fancybox]', {
+                // Настройки (если нужны)
+            });
+        });
+        
+        
+    </script>
+
+</body>
+
+</html>
+
+<!-- <div>
+    <div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-10" data-width="80" data-height="230"
+data-depth="54" data-shelves="1" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Штанга для одежды"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---10-80x230h54-sm-belyi-135401282/?c=750000000&m=16675022&sr=15&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYHa00L5dGF2TrpEc4QBemFUWAXuRDNB-Rv9g8IyG_GxbdBFUNGB6w5t-0_aem_U25hQDtAvpF7pVDDCmQqyA">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-10/KL-10-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-10/KL-10-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-101</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-11" data-width="80" data-height="230"
+data-depth="54" data-shelves="5" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Штанга для одежды"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---11-80x230h54-sm-belyi-135401285/?c=750000000&m=16675022&sr=14&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZoD9LDhhopAzYjTttJ8u4TcvLm5JeVA-b-VkOhKd8MpchWGLNAr48IX3E_aem_oa1r-SkWWDCch-PBhbH7Gg">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-11/KL-11-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-11/KL-11-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-11</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-12" data-width="80" data-height="230"
+data-depth="54" data-shelves="1" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Штанга для одежды"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---12-80x230h54-sm-belyi-135401286/?c=750000000&m=16675022&sr=13&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZWQl9z-SA74sR75QXjUUhY7qJ41WPUSr1EMKlckkEftR5e3IDmNv_Sd7M_aem_YMRtnM2_mPvg5nyirbg_7w">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-12/KL-12-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-12/KL-12-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-12</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-13" data-width="80" data-height="230"
+data-depth="54" data-shelves="3" data-boxes="3" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Нет"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---13-80x230h54-sm-belyi-135401297/?c=750000000&m=16675022&sr=17&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAabSTTH5W-XLOQ3Kp7-VXuDYdFBew_7B6dcF2eYIB5Qe6JhnVDBNkstOyNo_aem_A4KhNhl4RCPLTFfIvoX-dQ">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-13/KL-13-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-13/KL-13-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-13</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-14" data-width="80" data-height="230"
+data-depth="54" data-shelves="3" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Нет"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---14-80x230h54-sm-belyi-135401301/?c=750000000&m=16675022&sr=16&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZ0_DUW8XafDb40eGXZ--aff-vZ0CAyNAiNk3VWl4vqe8KULDDfSpW_XSY_aem_An5D1jVlDQOj2QChfC9VbA">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-14/KL-14-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-14/KL-14-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-14</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-15" data-width="80" data-height="230"
+data-depth="54" data-shelves="4" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Нет"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---15-80x230h54-sm-belyi-135401313/?c=750000000&m=16675022&sr=10&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaawZSRAl93hStt4oFB41SYHtcfA9NIMml43A_TKMI7BcxtWzm-d-WE3Chw_aem_UUWxAXf05ozlJ0c-AindFg">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-15/KL-15-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-15/KL-15-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-15</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-16" data-width="80" data-height="230"
+data-depth="54" data-shelves="3" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Штанга для одежды"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---16-80x230h54-sm-belyi-135401315/?c=750000000&m=16675022&sr=11&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYzWqCylUcjrGb0rbK0HImxePHWVyryak4naBFveNd-EDFHIs17uqu5Rsg_aem_FaFo2JtVLERFv9etouxeyA">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-16/KL-16-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-16/KL-16-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-16</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-17" data-width="80" data-height="230"
+data-depth="54" data-shelves="2" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Штанга для одежды"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---17-80x230h54-sm-belyi-135401319/?c=750000000&m=16675022&sr=12&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYOfr0wiNJFq0tVlZoBoMO1QE_VV3PHByOzmWnTaLQhS-khQ-OPk9PSyO0_aem_W_FlJb2EZTHP3ChjaocSwQ">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-17/KL-17-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-17/KL-17-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-17</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+
+<div class="product-card product-action" data-category="Dvukhstvorchatyy" data-id="KL-18" data-width="80" data-height="230"
+data-depth="54" data-shelves="5" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+data-features="Нет"
+data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-kl---18-80x230h54-sm-belyi-135401326/?c=750000000&m=16675022&sr=18&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaY02ifv2gI6R9fL5_gk5HVFYslPCkYEqj9-n7VzpgVf_eExP-I46rQyVIs_aem_Qm7G2WNgbALJEB30LI34fg">
+
+<div class="product-image-container">
+    <img src="./img/Dva/KL-18/KL-18-2.jpg" alt="Шкаф купе" class="product-image first-img">
+    <img src="./img/Dva/KL-18/KL-18-1.jpg" alt="Шкаф купе" class="product-image second-img">
+</div>
+<div class="product-info-box">
+<h3 class="product-title">Шкаф KL-18</h3>
+<p class="product-description">Элегантный Двухстворчатый шкаф с удобной системой хранения для
+    повседневной одежды.</p>
+    <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+
+</div>
+</div>
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-10" data-width="50" data-height="230"
+    data-depth="54" data-shelves="1" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый" data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-11-50x230h54-sm-belyi-135276411/?c=750000000&m=16675022&sr=1&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAabmnApLGp4_hVsldQ1zV6aEWhlwunLrk-vE83LXsTlCjBD8zno6_fm6rTM_aem_kAcu8A1N_4YD6I1mbmvlnQ"
+    data-features="Штанга для одежды">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-10/KS-10-2.jpg" alt="Шкаф распашной" class="product-image first-img">
+        <img src="./img/Odno/KS-10/KS-10-1.jpg" alt="Шкаф распашной" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-10</h3>
+    <p class="product-description">Компактный одностворчатый шкаф с полкой, выдвижным ящиком и штангой для
+        одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-11" data-width="50" data-height="230"
+    data-depth="54" data-shelves="1" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Штанга для одежды"
+    data-link="https://kaspi.kz/shop/p/modul-dlja-garderoba-kaas-ks-11-50x230h54-sm-belyi-135276375/?c=750000000&m=16675022&sr=4&qid=6fabb5ee307a17042358e49aec58b845&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZFrukb9_4LyZCgzDos4oajZoPoO5cIz1JYtXEuiDF2I1WUlow0aVTzk2o_aem_Iw85L7hIUVFe7cStlSbkTw">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-11/KS-11-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-11/KS-11-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-11</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+
+
+</div>
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-12" data-width="50" data-height="230"
+    data-depth="54" data-shelves="1" data-boxes="3" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Штанга для одежды"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-12-50x230h54-sm-belyi-135276336/?c=750000000&m=16675022&sr=7&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZnCZnLZdQaE0plBhpzudYHvtnaYiMtMdSt6UyeyfNxjY6qdkIBd8yurrQ_aem_Z0zf-9BGLQ8blexirRl60Q">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-12/KS-12-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-12/KS-12-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-12</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-13" data-width="50" data-height="230"
+    data-depth="54" data-shelves="3" data-boxes="3" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Нет"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-13-50x230h54-sm-belyi-135276362/?c=750000000&m=16675022&sr=6&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYjs-pMJfCJjZA8wx29IIfScMliI6QyMstFJ5o65rUVc_koe4X5DgjOc-I_aem_H15MdFbdeVhaqQ9nJBW8aA">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-13/KS-13-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-13/KS-13-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-13</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-14" data-width="50" data-height="230"
+    data-depth="54" data-shelves="3" data-boxes="2" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Нет"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-14-50x230h54-sm-belyi-135276329/?c=750000000&m=16675022&sr=2&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaYROv-LhcgkEpm7m0ZrDU80isKC7cF0DcmIqkWqtragaYc50Hrt4oP1Pkc_aem_6s48AiXalGKbQKJzwWCClQ">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-14/KS-14-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-14/KS-14-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-14</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-15" data-width="50" data-height="230"
+    data-depth="54" data-shelves="4" data-boxes="1" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Нет"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-15-50x230h54-sm-belyi-135276319/?c=750000000">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-15/KS-15-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-15/KS-15-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-15</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-16" data-width="50" data-height="230"
+    data-depth="54" data-shelves="3" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-16-50x230h54-sm-belyi-135276312/?c=750000000&m=16675022&sr=9&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAabx7aHgpbwu5i5CJXwKI5gFl2ZilrrZOzD56EVu6fwHJdA5FWxJkauNiLs_aem_W4RZqHcE2sLnmqpzNimAkA"
+    data-features="Штанга для одежды" >
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-16/KS-16-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-16/KS-16-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-16</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+
+<div class="product-card product-action" data-category="Odnostvorchatyy all" data-id="KS-17" data-width="50" data-height="230"
+    data-depth="54" data-shelves="2" data-boxes="Нет" data-material="ЛДСП EGGER" data-color="Белый"
+    data-features="Штанга для одежды"
+    data-link="https://kaspi.kz/shop/p/raspashnoi-shkaf-kaas-ks-17-50x230h54-sm-belyi-135276268/?c=750000000&m=16675022&sr=3&qid=e1f02d2b7cdcfa1f7259fd4777343e6e&ref=shared_link&fbclid=PAZXh0bgNhZW0CMTEAAaZddxn_XSwbcJ1H6hKOt9DouLn6AHTUCWPndIsomds9Wy1MD4Lw97kCxq4_aem_JS6uBCUFY1s3VkOH3NTj8Q">
+    
+    <div class="product-image-container">
+        <img src="./img/Odno/KS-17/KS-17-2.jpg" alt="Шкаф купе" class="product-image first-img">
+        <img src="./img/Odno/KS-17/KS-17-1.jpg" alt="Шкаф купе" class="product-image second-img">
+    </div>
+    <div class="product-info-box">
+    <h3 class="product-title">Шкаф KS-17</h3>
+    <p class="product-description">Элегантный одностворчатый шкаф с удобной системой хранения для
+        повседневной одежды.</p>
+        <p class="product-price-old">157 000₸</p>
+        <p class="product-price">107 000₸</p>
+    
+    </div>
+</div>
+</div> -->
